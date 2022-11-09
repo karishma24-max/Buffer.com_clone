@@ -9,7 +9,7 @@ const handleclick=()=>{
 }
 
   return (
-    <div><Calendar onChange={handleclick}  value={date}>
+    <div><Calendar onChange={setDate}  value={date}>
        
         
     </Calendar>
