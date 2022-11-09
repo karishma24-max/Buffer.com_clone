@@ -148,6 +148,26 @@ function Home() {
             </GridItem>
             
         </Grid>
+        <Grid  w="70%"
+        m="auto" mt="100px"
+        alignItems={"center"}
+        templateColumns={{
+          base: "repeat(1,1fr)",
+          sm: "repeat(1,1fr)",
+          md: "repeat(2,1fr)",
+        }} gap={10}>
+            <GridItem>
+                <Text color="blue"fontWeight={"600"} fontSize={"20px"}>3. SAVE TONS OF TIME</Text>
+                <Text fontWeight={"700"} fontSize={"40px"}>Halve your workload</Text>
+                <Text mt="20px" fontSize={"20px"} color={"gray.700"} fontWeight={600} lineHeight={2}>Buffer will publish everything for you to save time and it’ll showcase your work with automated reports.</Text>
+                
+                <Button mt="20px" color="#fff" background={"blue"}>Get Started now</Button>
+            </GridItem>
+            <GridItem>
+                <Image src="https://buffer.com/static/illustrations/hero-reply@2x-2.webp" alt="stage3"/>
+            </GridItem>
+            
+        </Grid>
       </Box>
 
     </Box>
