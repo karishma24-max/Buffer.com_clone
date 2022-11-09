@@ -59,7 +59,7 @@ function Navbar() {
           <HStack spacing={8} alignItems={"center"}>
             <Heading letterSpacing={3} fontFamily={"Inspiration"}>
               <Link to={"/"} key={"home"}>
-                <Image w="60%" src="https://i.ibb.co/bJy3Fdq/blulock.webp" alt="logo" />
+                <Image w="60%" src="https://i.ibb.co/6JkQKCN/Bluelock.png" alt="logo" />
               </Link>
             </Heading>
           </HStack>
