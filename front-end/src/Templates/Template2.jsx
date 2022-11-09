@@ -2,7 +2,7 @@ import { Box, Button, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import Styles from "./Template2.css";
 // hashim you can send the props to this components from start page input elements
-const Template1 = () => {
+const Template2 = () => {
   // hashim you can send the props to this components from start page input elements
   return (
     <Box className="main">
@@ -89,4 +89,4 @@ const Template1 = () => {
   );
 };
 
-export default Template1;
+export default Template2;
