@@ -1,5 +1,5 @@
 #Team Code : aberrant-coast-299 
-# Team Code : BlueLoack
+# Team Name : BlueLoack
 
   "Buffer is a social media management application or tool. 
   It helps you to manage multiple social media networks from one place.
