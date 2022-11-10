@@ -122,7 +122,7 @@ const Signup = () =>{
         </div>
 
              <div className="div2">
-                <img id="div2imhg" src="" alt="" />
+                <img id="div2imhg" src="https://github.com/karishma24-max/aberrant-coast-299/blob/fp04_087_day-2/front-end/public/assets/blueLockSignimg.png?raw=true" alt="" />
              </div>
             
         </div>
