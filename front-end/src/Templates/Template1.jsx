@@ -1,83 +1,71 @@
 import { Box, Button, Drawer, Heading, Image, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Editing from "../pages/Editing-Page/Edititng.";
 import DrawerComponents from "../pages/Start-Page/Drawer-Components/DrawerComponents";
 import Styles from "./Template1.css";
-// hashim you can send the props to this components from start page input elements
-
-const getData = (id) => {
-  console.log(id)
-
-  return (id)
-}
-
-
+import axios from "axios"
+import { useSelector } from "react-redux";
 
 
 const Template1 = () => {
-  // hashim you can send the props to this components from start page input elements
+  
+  const data = useSelector((store)=>store.template.payload)
 
-
-  const id = getData('Hello')
-
-  console.log(id)
 
   return (
-    <Box className="main">
+    data && data.image1 && <Box className="main">
        <Box className="head">
         <Box className="head-div">
           <Box display="flex" justifyContent="center">
             <Image
-              display="block"
-              boxSize="100px"
-              objectFit="cover"
+              display={data.image1.display}
+              boxSize={data.image1.boxSize}
+              objectFit={data.image1.objectFit}
               // hashim you can send the props to this components from start page input elements src
-              src="https://buffer-start-page-uploads.s3.amazonaws.com/defaults/1630246015634.buffer-logo.png"
-              alt="main logo"
+              src={data.image1.src}
+              alt={data.image1.alt}
             />
           </Box>
-          <Heading color="white">Start Page</Heading>
-          <Text color="white">A place your business can call home</Text>
+          <Heading color={data.heading1.color}>{data.heading1.content}</Heading>
+          <Text color={data.text1.color}>{data.text1.content}</Text>
         </Box>
       </Box>
       {/* padding="35px 170px 35px 170px" */}
       <Box>
         <Button
-          colorScheme="yellow"
-          width="380px"
-          padding="35px 50px 35px 50px"
+          colorScheme={data.button1.colorScheme}
+          width={data.button1.width}
+          padding={data.button1.padding}
         >
-          A link to anything →
+          {data.button1.content}
         </Button>
       </Box>
       <Box className="description1">
         <Text>
-        Make it your own! You can edit any of the existing blocks of content on this page or add new blocks.
+          {data.description.content}
         </Text>
       </Box>
       <Box width="380px" margin="auto">
         <Image
-          src="https://buffer-start-page-uploads.s3.amazonaws.com/defaults/product-image.png"
+          src={data.image2.src}
           alt="mid"
-          borderRadius="10px"
+          borderRadius={data.image2.borderRadius}
         />
       </Box>
       <Box className="description1">
         <Text>
-          Second description lnosdfcndo dncdovnfv odncvdovhnervc
-          odnveovcnefrvlnosdfcndo dncdovnfv odncvdovhnervc odnveovcnefrv
-          dhnvcovcn dhnvcovcn
+         {data.description2.content}
         </Text>
       </Box>
       <div className="video-responsive">
         <iframe
-          width="750"
-          height="480"
-          src={`https://www.youtube.com/embed/EcDgL0ap60M`}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          width={data.iframe.width}
+          height={data.iframe.height}
+          src={data.iframe.src}
+          frameBorder={data.iframe.frameBorder}
+          allow={data.iframe.allow}
           allowFullScreen
-          title="Embedded youtube"
+          title={data.iframe.title}
         />
       </div>
     </Box>
