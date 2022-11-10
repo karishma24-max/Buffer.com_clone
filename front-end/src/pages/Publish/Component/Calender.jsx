@@ -5,6 +5,7 @@ import { background, Box, Button, Flex, Heading, Img, Input, Modal, ModalBody, M
 import styled from '@emotion/styled'
 import { GoNoNewline } from 'react-icons/go'
 import { AiFillFileImage } from 'react-icons/ai'
+import axios from 'axios'
 
 // import Days from 'react-calendar/src/MonthView/Days'
 const weekday=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
@@ -74,44 +75,22 @@ const nextmonth=()=>{
         }
 }
 const [open,setopen]=useState(false)
-function activemodal() {
-   setopen(true)
-   console.log(open)
-    return (
-      <>
-        
-  
-        <Modal  onClose={onClose} onopen={open}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Modal Title</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              
-            </ModalBody>
-  
-            <ModalFooter>
-              <Button colorScheme='blue' mr={3} onClick={onClose}>
-                Close
-              </Button>
-              <Button variant='ghost'>Secondary Action</Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-      </>
-    )
-  }
+
+    
   const [image,setImage]=useState("")
   let x= new Date()
   const current= x.getDate()
   console.log(current)
-  const handleimage=(e)=>{
-    setImage(e.value.target)
+  const [userdata,setUserdata]=useState({img:"",text:""})
+  const handledata=(e)=>{
+    const {value, name} = e.target
+        setUserdata({...userdata,[name]:value})
 }
-// useEffect(()=>{
-//    handleimage() 
-    
-// },[image])
+const handleSubmit=()=>
+{
+let response=axios.patch("  http://localhost:8080,userdata")
+console(response.data)
+}
   return (
     <div><Flex mt="30px">
   <Flex>  <Button ml="50px" onClick={prevmonth}><ArrowBackIcon/></Button><Heading size='md'>Today</Heading><Button onClick={nextmonth}><ArrowForwardIcon/>
@@ -145,13 +124,13 @@ style={{
           
           <ModalCloseButton color="grey" />
          <ModalBody><Box border="2px solid lightgrey" mt={10} ml={10} mr={10} mb={10} height="420px">
-         <Flex><Box w="120px" color="blue" textAlign={"center"}><Input color="grey" border="2px dotted" mr="20px" mt="50px" type="file"  / >
+         <Flex><Box w="120px" color="blue" textAlign={"center"}><Input color="grey" border="2px dotted" mr="20px" mt="50px" type="file" name="img" onChange={handledata} / >
         <Box ml="35px" mt="40px"> <AiFillFileImage size="50px" color="rgb(91, 87, 87)"/>
          </Box><Text ml="5px">select your file </Text></Box>
 
-        <Input placeholder="What would you like to share" w="70%" h="300px" />
+        <Input placeholder="What would you like to share" name="text" onChange={handledata} w="70%" h="300px" />
 
-         </Flex> </Box> </ModalBody>
+         </Flex> </Box> <Button onClick={handlesubmit}>Submit</Button></ModalBody>
          </ModalContent>
           </Modal>
 </Box>
