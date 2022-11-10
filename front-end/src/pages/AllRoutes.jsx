@@ -7,7 +7,7 @@ import { MainPage_Template, template_arr } from './Start-Page/Main-Page-template
 
 import Publishing from './Publish/Publishing'
 
-import { MainPage_Template } from './Start-Page/Main-Page-template/Main-Page-template'
+// import { MainPage_Template } from './Start-Page/Main-Page-template/Main-Page-template'
 function AllRoutes() {
   return (<Routes>
     <Route path="/" element={<Home/>}/>
