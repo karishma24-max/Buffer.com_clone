@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./signin.css"
-import BLSignin from "./images/BLSignin.png"
+// import BLSignin from "./images/BLSignin.png"
 import axios from "axios"
 
 
@@ -91,7 +91,7 @@ const Signin = ()=>{
 
 
             <div id="div2">
-                <img id="BLSignimg" src={BLSignin} alt="" />
+                <img id="BLSignimg" src="https://github.com/karishma24-max/aberrant-coast-299/blob/main/front-end/public/assets/BLSignin.png?raw=true" alt="" />
             </div>
         </div>
     )
