@@ -140,11 +140,14 @@
   
 
 .calender-box{
+    
     margin-top: 50px;
-    width:1300px;
+    width:1225px;
     height:500px;
     border:1px solid;
-    margin:5px
+    margin-top:15px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .calender-title{
@@ -154,7 +157,7 @@
     height:40px;
  text-align: center;
  font-weight: 600;
- color:rgb(60, 57, 57);
+ color:rgb(201, 190, 190);
     grid-template-columns: repeat(7,1fr);
     border:1px solid black;
     
@@ -165,24 +168,34 @@
 .calender-body{
     height:460px;
     display: grid;
-    grid-template-columns: repeat(7,1fr);
+    grid-template-columns: repeat(7,175px);
     grid-template-rows: repeat(5,1fr);
     text-align: left;
 }
-p{
-    padding-top: 30px;
-    color:cornflowerblue;
+.texting{
+    
+    text-align: right;
+    padding-left: 200px;
+    padding-top:100px;
+   color:white;
     text-align: end;
     font-size:24px ;
     font-weight: bold;
+    transition: all 0.3s ease ;
 }
+
+
 .styledate{
+    transition: all 0.3s ease ;
     border:1px solid;
     padding-left:10px;
     
     color:"black"
     
 }
-
+.styledate:hover{
+    color:cornflowerblue;
+     background-color: rgb(242, 233, 233);
+}
 
 
