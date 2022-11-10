@@ -136,77 +136,77 @@ function Footer() {
             }}
           >
             <GridItem>
-              <Text lineHeight={"35px"} fontWeight={"700"} fontSize="25px">
+              <Text lineHeight={"25px"} fontWeight={"700"} fontSize="25px">
                 Tools
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Publishing
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Analytics
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Enagagement
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Start PAge
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Extras
               </Text>
             </GridItem>
             <GridItem>
-              <Text lineHeight={"35px"} fontWeight={"700"} fontSize="25px">
+              <Text lineHeight={"25px"} fontWeight={"700"} fontSize="25px">
                 Resources
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Blog
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Content library
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Browser extenstion
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Free imae editor
               </Text>
             </GridItem>
             <GridItem>
-              <Text lineHeight={"35px"} fontWeight={"700"} fontSize="25px">
+              <Text lineHeight={"25px"} fontWeight={"700"} fontSize="25px">
              
                 Support
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Help Center
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Status
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 changelog
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Product Road map
               </Text>
             </GridItem>
             <GridItem>
-              <Text lineHeight={"35px"} fontWeight={"700"} fontSize="25px">
+              <Text lineHeight={"25px"} fontWeight={"700"} fontSize="25px">
                 Companay
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 About
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Transparancy
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 carrers
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Press
               </Text>
-              <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
+              <Text lineHeight={"25px"} fontWeight={"400"} fontSize="18px">
                 Sitemap
               </Text>
             </GridItem>
