@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./signin.css"
-import BLSignin from "./images/BLSignin.png"
+// import BLSignin from "./images/BLSignin.png"
 import axios from "axios"
 
 
@@ -20,7 +20,7 @@ const Signin = ()=>{
 
     const[state, setstate] = useState(false);
 
-    const[users , setusers] = useState([]);
+    // const[users , setusers] = useState([]);
 
     const handleChange = (e) =>{
         const {value, name} = e.target
@@ -29,17 +29,20 @@ const Signin = ()=>{
     }
   
     const handleSubmit = () =>{
-        if(users.length>1){
-            console.log(users);
-        }else{
-            axios.get("http://localhost:8080/user")
-            .then((res)=>{
-            let data = (res.data)
-            let user = data.filter((el)=>el.email===data.email && el.password==data.password);
-            setusers(data);
-            localStorage.setItem("user",JSON.stringify(user));
-        });
-        }
+        console.log(data);
+        // axios({
+        //     method: 'post',
+        //     url: 'http://localhost:8080/user',
+        //     data: data
+        // })
+        // .then((res)=>{
+        //     console.log(res)
+        //     // Naviagete to next page ; 
+        // })
+        // .catch( (error) => {
+        //     console.log(error);
+        //     alert("Please Enter The Valid Credentioals");
+        // });
     }
     
    
@@ -91,7 +94,7 @@ const Signin = ()=>{
 
 
             <div id="div2">
-                <img id="BLSignimg" src={BLSignin} alt="" />
+                <img id="BLSignimg" src="https://github.com/karishma24-max/aberrant-coast-299/blob/main/front-end/public/assets/BLSignin.png?raw=true" alt="" />
             </div>
         </div>
     )
