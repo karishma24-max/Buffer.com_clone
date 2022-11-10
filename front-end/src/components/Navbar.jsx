@@ -13,13 +13,13 @@ import {
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {Link} from "react-router-dom"
 const Links = [
-  { name: "Tools", id: "/tools" },
-  { name: "Skills", id: "/channels" },
-  { name: "Pricing", id: "/pricing" },
-  { name: "Blog", id: "/blog" },
+  { name: "Tools", id: "/toolsdemo" },
+  { name: "Channels", id: "/channelsdemo" },
+  { name: "Pricing", id: "/pricingdemo" },
+  { name: "Blog", id: "/blogdemo" },
   { name: "About", id: "/about" },
-  { name: "Customers", id: "/customers" },
-  { name: "Login", id: "/login" },
+  { name: "Customers", id: "/customersdemo" },
+  { name: "Login", id: "/logindemo" },
 ];
 
 function Navbar() {
