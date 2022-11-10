@@ -51,4 +51,4 @@ function AllRoutes() {
     </Routes>
   );
 }
-export default  AllRoutes;
+export default AllRoutes;
