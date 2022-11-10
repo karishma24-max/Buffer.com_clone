@@ -1,25 +1,25 @@
-import { get_template, update_template } from "./template.type";
+import { getIdTemplate, get_template } from "./template.type";
 import axios from 'axios'
 
-export const getTemplate = (path) => async (dispatch) => {
-    let response = await axios.get(`http://localhost:8080/${path}`)
+export const getTemplate = (id) => async (dispatch) => {
+    let response = await axios.get(`  http://localhost:8080/Template/${id}`)
     let data = await response.data
     dispatch({ type: get_template, payload: data })
 }
 
+export const getId = (id) => (dispatch) => {
+    dispatch({type : getIdTemplate , payload : id})
+}
 
 
-// export const updateTemplate = async () => {
-//     let response = await axios.put("  http://localhost:8080/Traveler-Template/", {
-//         image1: {
-//             display: "block",
-//             boxSize: "100px",
-//             objectFit: "cover",
-//             src: "https://buffer-start-page-uploads.s3.amazonaws.com/defaults/flowers/flowers-shop-profile.png",
-//             alt: "main logo"
-//           }
+
+
+// export const updateTemplate = async (  ) => {
+//     let response = await axios.patch(`http://localhost:8080/Template/1` , {
+//         heading1content : headingcontent
 //     })
 // }
+
 
 
 

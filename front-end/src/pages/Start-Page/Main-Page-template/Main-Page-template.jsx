@@ -1,30 +1,30 @@
-import { Box, Divider, Grid, GridItem, Heading, Text, Image, useDisclosure } from "@chakra-ui/react"
+import { Box, Divider, Grid, GridItem, Heading, Text, Image } from "@chakra-ui/react"
 import { useNavigate } from "react-router-dom"
-import Template2 from "../../../Templates/Template2"
-import Template1 from "../../../Templates/Template1"
-import "./MainPage.module.css"
-import Editing from "../../Editing-Page/Edititng."
-import { getTemplate } from "../../../redux/Template/template.action"
+import { getId, getTemplate} from "../../../redux/Template/template.action"
 import {useDispatch} from "react-redux"
 
 export const template_arr = [
     {
+    id : 1,
     template: "https://buffer-start-page.s3.amazonaws.com/presets/Default_X2.png",
     title : "Traveler",
     path : "Traveler-Template",
     
     },
     {
+    id : 2,
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Flower_X2.png",
     title : "Flowers Shop",
     path : "Flowers-Shop-Template",
     },
     {
+    id : 3,
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Pizza_X2.png",
     title : "Pizza",
     path : "Pizza-Template"
     },
     {
+    id : 4,
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Alexoo_X2.png",
     title : "Alexo",
     path : "Alexo-Template"
@@ -37,9 +37,10 @@ export const MainPage_Template = () => {
     const Navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const handelTemplateNaviate = (path) => {
+    const handelTemplateNaviate = (path , id) => {
         Navigate(`./${path}`)
-        dispatch(getTemplate(path))
+        dispatch(getTemplate(id))
+        dispatch(getId(id))
         
     }
     

@@ -14,6 +14,7 @@ import {
   MainPage_Template,
   template_arr,
 } from "./Start-Page/Main-Page-template/Main-Page-template";
+import Template1 from "../Templates/Template1";
 function AllRoutes() {
   return (
     <Routes>
@@ -30,23 +31,14 @@ function AllRoutes() {
       <Route path="/signin" element={<Signin />} />
 
       {template_arr.map((i) => {
-        if (i.file) {
+
           return (
             <Route
               key={i.path}
               path={`/start-page/${i.path}`}
-              element={i.file}
+              element={<Template1 />}
             />
-          );
-        } else {
-          return (
-            <Route
-              key={i.path}
-              path={`/start-page/${i.path}`}
-              element={<h1>No data is here</h1>}
-            />
-          );
-        }
+          )
       })}
     </Routes>
   );
