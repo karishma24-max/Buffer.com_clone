@@ -17,9 +17,9 @@ function AllRoutes() {
     {
       template_arr.map((i)=> {
         if(i.file) {
-          return <Route path={`/start-page/${i.path}`} element={i.file} /> 
+          return <Route key={i.path} path={`/start-page/${i.path}`} element={i.file} /> 
         } else {
-          return <Route path={`/start-page/${i.path}`} element={<h1>No data is here</h1>} />
+          return <Route key={i.path} path={`/start-page/${i.path}`} element={<h1>No data is here</h1>} />
         }
       })
     }
