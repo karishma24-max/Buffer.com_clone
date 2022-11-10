@@ -1,12 +1,30 @@
-import { Box, Button, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Drawer, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
+import Editing from "../pages/Editing-Page/Edititng.";
+import DrawerComponents from "../pages/Start-Page/Drawer-Components/DrawerComponents";
 import Styles from "./Template1.css";
 // hashim you can send the props to this components from start page input elements
+
+const getData = (id) => {
+  console.log(id)
+
+  return (id)
+}
+
+
+
+
 const Template1 = () => {
   // hashim you can send the props to this components from start page input elements
+
+
+  const id = getData('Hello')
+
+  console.log(id)
+
   return (
     <Box className="main">
-      <Box className="head">
+       <Box className="head">
         <Box className="head-div">
           <Box display="flex" justifyContent="center">
             <Image
@@ -34,9 +52,7 @@ const Template1 = () => {
       </Box>
       <Box className="description1">
         <Text>
-          first description lnosdfcndo dncdovnfv odncvdovhnervc odnveovcnefrv
-          dhnvcovcn lnosdfcndo dncdovnfv odncvdovhnervc odnveovcnefrv dhnvcovcn
-          lnosdfcndo dncdovnfv odncvdovhnervc odnveovcnefrv dhnvcovcn
+        Make it your own! You can edit any of the existing blocks of content on this page or add new blocks.
         </Text>
       </Box>
       <Box width="380px" margin="auto">
