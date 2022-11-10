@@ -1,0 +1,55 @@
+.main {
+    width: 400px;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #fbd4bd;
+  }
+  .head {
+    width: 380px;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: auto;
+    padding: 10px;
+    background-image: url("https://buffer-start-page-uploads.s3.amazonaws.com/defaults/pizza/pizza-header-background.png");
+  }
+  .head-div {
+    width: 250px;
+    height: 250px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 100px;
+  }
+  /* #f5f5f5 */
+  .description1 {
+    width: 380px;
+    margin: auto;
+    border-radius: 10px;
+  }
+  .video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    width: 380px;
+    margin: auto;
+    border-radius: 10px;
+  }
+  
+  .video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  
