@@ -11,7 +11,7 @@ const Publishing = () => {
   return (
     <Flex >
     <Sidebar/>
-    <Calender/>
+    <Calender startingDate={new Date()}/>
    </Flex>
   )
 }
