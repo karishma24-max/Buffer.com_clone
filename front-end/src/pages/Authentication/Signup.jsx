@@ -109,7 +109,7 @@ const Signup = () =>{
                     </div>
                     </div>
                     <div>
-                        <button  onClick={HandleSubmit}   className="freetrailbtn2" disabled={true}>Sign up</button>
+                        <button  onClick={HandleSubmit}   className="freetrailbtn2" >Sign up</button>
                     </div>
                 </div>
 
