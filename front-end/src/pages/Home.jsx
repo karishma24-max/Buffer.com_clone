@@ -11,9 +11,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 function Home() {
   return (
     <Box>
+      <Navbar/>
       {/* Section-1 */}
       <Grid
         w="80%"
@@ -311,13 +314,7 @@ function Home() {
           <Image h="60px" src="https://buffer.com/static/ui/linkedin-marketing-partner@2x-2.png" alt="1"/>
         </Flex>
       </Box>
-
-      <Box mt="100px" textAlign={"center"} background={"blue.600"}>
-         <Text pt="100px"  fontSize={{sm:"25px",md:"40px"}} fontWeight={700} color="#fff" textAlign={"center"}>
-         140,000+ people like you use<br/> Buffer to build their brand on<br/> social media every month
-         </Text>
-         <Link to="/signup"> <Button m="50px 0" color="#ffffff" p="30px" fontSize={"20px"} background='orange' _hover={{boxShadow:"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}}>Get started now</Button></Link>
-      </Box>
+      <Footer/>
     </Box>
   );
 }
