@@ -1,6 +1,9 @@
-import { get_template, update_template } from "./template.type"
+import { getIdTemplate, get_template, update_template } from "./template.type"
 
-const initalState = []
+const initalState = {
+    templatearr : {},
+    id : 0,
+}
 
 export const Templatereducer = (state = initalState , {type, payload}) => {
     switch(type) {
@@ -8,13 +11,19 @@ export const Templatereducer = (state = initalState , {type, payload}) => {
         case get_template : {
             return {
                 ...state,
-                payload
+                templatearr : payload
             }
         }
 
         case update_template : {
             return {
                 ...state,
+            }
+        }
+        case getIdTemplate : {
+            return {
+                ...state,
+                id : payload
             }
         }
 

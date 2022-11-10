@@ -1,4 +1,4 @@
- <!-- "Flowers-Shop-Template" : {
+ <!-- <!-- "Flowers-Shop-Template" : {
             "image1": {
               "display": "block",
               "boxSize": "100px",
@@ -165,3 +165,16 @@
           "allowFullScreen": "allowFullScreen",
           "title": "Embedded youtube"
       } -->
+
+
+
+
+  "Alexo-Template": {
+    
+  } -->
+
+
+
+
+
+
