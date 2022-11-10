@@ -138,7 +138,7 @@
     background-color: #e6e6e6;
   } */
   
-
+/* 
 .calender-box{
     margin-top: 50px;
     width:1300px;
@@ -159,10 +159,10 @@
     border:1px solid black;
     
     padding-bottom: 5px;
-}
+} */
 
 
-.calender-body{
+/* .calender-body{
     height:460px;
     display: grid;
     grid-template-columns: repeat(7,1fr);
@@ -182,7 +182,7 @@ p{
     
     color:"black"
     
-}
+} */
 
 
 
