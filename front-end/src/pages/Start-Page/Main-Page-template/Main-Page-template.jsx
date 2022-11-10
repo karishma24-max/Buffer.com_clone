@@ -42,6 +42,8 @@ export const template_arr = [
     }
 ]
 
+// fetch
+
 export const MainPage_Template = () => {
     const Navigate = useNavigate()
 

@@ -1,4 +1,4 @@
-.react-calendar {
+/* .react-calendar {
     width: 1350px;
     
     max-width: 100%;
@@ -9,7 +9,8 @@
   }
   .react-calendar--doubleView {
     width: 700px;
-    background-color: #1087ff;
+
+    background-color: red;
   }
   .react-calendar--doubleView .react-calendar__viewContainer {
     display: flex;
@@ -45,7 +46,7 @@
   }
   .react-calendar__navigation button {
     min-width: 14px;
-    background:none;
+    background:none
   }
   .react-calendar__navigation button:disabled {
     background-color: #f0f0f0;
@@ -57,17 +58,21 @@
   .react-calendar__month-view__weekdays {
     text-align: center;
     text-transform: uppercase;
+   
     font-weight: bold;
     font-size: 0.75em;
   }
   .react-calendar__month-view__weekdays__weekday {
     padding: 0.5em;
+    border:2px solid grey;
+    background-color: #006edc;
    
   }
   .react-calendar__month-view__weekNumbers .react-calendar__tile {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    
+    
+    
  
     font-size: 0.75em;
     font-weight: bold;
@@ -123,6 +128,7 @@
   .react-calendar__tile--active {
     background: #006edc;
     color: white;
+    border-radius: 100%
   }
   .react-calendar__tile--active:enabled:hover,
   .react-calendar__tile--active:enabled:focus {
@@ -130,5 +136,53 @@
   }
   .react-calendar--selectRange .react-calendar__tile--hover {
     background-color: #e6e6e6;
-  }
+  } */
   
+
+.calender-box{
+    margin-top: 50px;
+    width:1300px;
+    height:500px;
+    border:1px solid;
+    margin:5px
+}
+
+.calender-title{
+    
+    width:100%;
+    display: grid;
+    height:40px;
+ text-align: center;
+ font-weight: 600;
+ color:rgb(60, 57, 57);
+    grid-template-columns: repeat(7,1fr);
+    border:1px solid black;
+    
+    padding-bottom: 5px;
+}
+
+
+.calender-body{
+    height:460px;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: repeat(5,1fr);
+    text-align: left;
+}
+p{
+    padding-top: 30px;
+    color:cornflowerblue;
+    text-align: end;
+    font-size:24px ;
+    font-weight: bold;
+}
+.styledate{
+    border:1px solid;
+    padding-left:10px;
+    
+    color:"black"
+    
+}
+
+
+

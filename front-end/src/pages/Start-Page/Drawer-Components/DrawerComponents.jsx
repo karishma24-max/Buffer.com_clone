@@ -51,7 +51,9 @@ const drawerItem = [
 
 
 
-export default function DrawerComponents(id) {
+
+
+export default function DrawerComponents() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
     
