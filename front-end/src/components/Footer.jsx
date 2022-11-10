@@ -136,7 +136,7 @@ function Footer() {
             }}
           >
             <GridItem>
-              <Text lineHeight={"35px"} fontWeight={"800"} fontSize="20px">
+              <Text lineHeight={"35px"} fontWeight={"700"} fontSize="25px">
                 Tools
               </Text>
               <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
@@ -156,7 +156,7 @@ function Footer() {
               </Text>
             </GridItem>
             <GridItem>
-              <Text lineHeight={"35px"} fontWeight={"800"} fontSize="20px">
+              <Text lineHeight={"35px"} fontWeight={"700"} fontSize="25px">
                 Resources
               </Text>
               <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
@@ -173,8 +173,8 @@ function Footer() {
               </Text>
             </GridItem>
             <GridItem>
-              <Text lineHeight={"35px"} fontWeight={"800"} fontSize="20px">
-                {" "}
+              <Text lineHeight={"35px"} fontWeight={"700"} fontSize="25px">
+             
                 Support
               </Text>
               <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
@@ -191,7 +191,7 @@ function Footer() {
               </Text>
             </GridItem>
             <GridItem>
-              <Text lineHeight={"35px"} fontWeight={"800"} fontSize="20px">
+              <Text lineHeight={"35px"} fontWeight={"700"} fontSize="25px">
                 Companay
               </Text>
               <Text lineHeight={"35px"} fontWeight={"400"} fontSize="18px">
