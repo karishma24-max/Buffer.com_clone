@@ -11,12 +11,14 @@ const init = {
 }
 const Signup = () =>{
     const [disable, setDisable] = useState(false);
-    const [data , setData] = useState(init)
+    const [data , setData] = useState(init);
+    const [captcha , setcaptcha] = useState(false);
     // console.log(disable)
 
     const onChangeReacpth = (value) =>{
         setDisable(!disable)
         console.log("captch")
+        setcaptcha(true);
         console.log(value);
     }
 
@@ -28,16 +30,30 @@ const Signup = () =>{
             alert("Please enter the Valid email ")
         }
         else if(data.password.length<5){
-            if(data.password.length=""){
+            if(data.password.length===""){
                 alert("please enter valid password")
             }else{
-                alert("please enter minimum 5 leeters password")
+                alert("please enter minimum 5 letters password")
             }
                 
+        }else if(!captcha){
+            alert("Please Complete The Captcha")
         }
         else{
-            axios.post("http://localhost:8080/user",data)
-            console.log("done")
+            try{
+                axios.post("http://localhost:8080/user",data)
+            // console.log("done");
+            // setData(init)
+            .then(()=>{
+                console.log("done")
+                alert("Success")
+            })
+            }catch(err){
+                console.log(err)
+                
+            }
+            
+            
         }
         
     }
@@ -94,7 +110,7 @@ const Signup = () =>{
                     </div>
                     </div>
                     <div>
-                        <button disabled={true} className="freetrailbtn">Start Free Trail</button>
+                        <button onClick={()=>alert("Cirrently this future is not awailable")} className="freetrailbtn">Start Free Trail</button>
                     </div>
                 </div>
 
@@ -122,7 +138,7 @@ const Signup = () =>{
         </div>
 
              <div className="div2">
-                <img id="div2imhg" src="https://github.com/karishma24-max/aberrant-coast-299/blob/fp04_087_day-2/front-end/public/assets/blueLockSignimg.png?raw=true" alt="" />
+                <img id="div2imhg" src="https://raw.githubusercontent.com/karishma24-max/aberrant-coast-299/main/front-end/public/assets/blueLockSignimg.png?token=GHSAT0AAAAAABZIGXPFMMUMDXJZLJGU4SHMY3N2BUQ" alt="" />
              </div>
             
         </div>
