@@ -38,7 +38,7 @@ function AllRoutes() {
           return (
             <Route
               key={i.path}
-              path={`/start-page/${i.path}`}
+              path={`/start-page/:id`}
               element={<Template1 />}
             />
           )

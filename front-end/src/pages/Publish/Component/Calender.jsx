@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import {ArrowBackIcon,ArrowForwardIcon } from '@chakra-ui/icons'
-import { background, Box, Button, Flex, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Spacer, Text, useDisclosure } from '@chakra-ui/react'
+import { background, Box, Button, Flex, Heading, Img, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Spacer, Text, Tooltip, useDisclosure } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { GoNoNewline } from 'react-icons/go'
+import { AiFillFileImage } from 'react-icons/ai'
+import axios from 'axios'
 
 // import Days from 'react-calendar/src/MonthView/Days'
 const weekday=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
@@ -72,51 +75,66 @@ const nextmonth=()=>{
         }
 }
 const [open,setopen]=useState(false)
-function activemodal() {
-   setopen(true)
-   console.log(open)
-    return (
-      <>
-        
-  
-        <Modal  onClose={onClose} onopen={open}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Modal Title</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              
-            </ModalBody>
-  
-            <ModalFooter>
-              <Button colorScheme='blue' mr={3} onClick={onClose}>
-                Close
-              </Button>
-              <Button variant='ghost'>Secondary Action</Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-      </>
-    )
-  }
 
+    
+  const [image,setImage]=useState("")
+  let x= new Date()
+  const current= x.getDate()
+  console.log(current)
+  const [userdata,setUserdata]=useState({img:"",text:""})
+  const handledata=(e)=>{
+    const {value, name} = e.target
+        setUserdata({...userdata,[name]:value})
+}
+const handleSubmit=()=>
+{
+let response=axios.patch("  http://localhost:8080,userdata")
+console(response.data)
+}
   return (
-    <div><Flex>
-  <Flex>  <Button onClick={prevmonth}><ArrowBackIcon/></Button><Heading>Today</Heading><Button onClick={nextmonth}><ArrowForwardIcon/>
-    </Button> <Heading>{date.toLocaleString('en-US',{month:"long"})}{currentYear}</Heading></Flex>
+    <div><Flex mt="30px">
+  <Flex>  <Button ml="50px" onClick={prevmonth}><ArrowBackIcon/></Button><Heading size='md'>Today</Heading><Button onClick={nextmonth}><ArrowForwardIcon/>
+    </Button> <Heading  size='md' ml="10px">{date.toLocaleString('en-US',{month:"long"})}{currentYear}</Heading></Flex>
     <Spacer />
-     <Box><Button ml={4}>All posts</Button><Button ml={4} c={"blue"} bg={"cornflowerblue"}>Month</Button><Button ml={4} bg={"blue"}>Create Posts</Button></Box></Flex>
+     <Box><Button ml={4}>All posts</Button><Button ml={4}>All Channels</Button><Button ml={4} c={"blue"} bg={"cornflowerblue"}>Month</Button><Button ml={4} bg={"blue"}>Create Posts</Button></Box></Flex>
 
 
     <div className="calender-box">
     <div className="calender-title">{getSorteddays(currentMonth,currentYear).map((day)=><div>{day}</div>)}</div>
 
-    <div className="calender-body">{range(getdays).map((day)=><div className='styledate'  onClick={()=>activemodal()}   active={console.log(aredatethesame(
-        new Date(),getdateobj(day,currentMonth,currentYear)
-    ))}   >{day} <p>+</p></div>)}</div>
-  
+    <div className="calender-body">{range(getdays).map((day)=>
+<Tooltip  hasArrow  label='Create Post' bg="cornflowerblue"  placement='right'><div className='styledate' 
+style={{
+         background: current > day ? 'rgb(237, 229, 229)': "white" ,
+         fontSize:current === day? "40px":"15px",
+         fontWeight:current===day?"bold":"none",
+         color:current === day? "cornflowerblue":"black"
+        }}
 
-    </div>
+
+ onClick={onOpen}    ><Box w="50px" h="50px" >{day}</Box> 
+    
+  </div></Tooltip>)}</div> 
+  </div>
+<Box>
+
+<Modal isOpen={isOpen} onClose={onClose} size="xl">
+        <ModalOverlay  />
+        <ModalContent bg="white" height="500px">
+          
+          <ModalCloseButton color="grey" />
+         <ModalBody><Box border="2px solid lightgrey" mt={10} ml={10} mr={10} mb={10} height="420px">
+         <Flex><Box w="120px" color="blue" textAlign={"center"}><Input color="grey" border="2px dotted" mr="20px" mt="50px" type="file" name="img" onChange={handledata} / >
+        <Box ml="35px" mt="40px"> <AiFillFileImage size="50px" color="rgb(91, 87, 87)"/>
+         </Box><Text ml="5px">select your file </Text></Box>
+
+        <Input placeholder="What would you like to share" name="text" onChange={handledata} w="70%" h="300px" />
+
+         </Flex> </Box> <Button onClick={handlesubmit}>Submit</Button></ModalBody>
+         </ModalContent>
+          </Modal>
+</Box>
+    
 </div>
   )
 }
