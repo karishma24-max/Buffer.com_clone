@@ -33,13 +33,6 @@
     grid-template-rows: repeat(5,1fr);
     text-align: left;
 }
-p{
-    padding-top: 30px;
-    color:cornflowerblue;
-    text-align: end;
-    font-size:24px ;
-    font-weight: bold;
-}
 .styledate{
     transition: all 0.3s ease ;
     border:1px solid;

@@ -17,6 +17,7 @@ import {
   template_arr,
 } from "./Start-Page/Main-Page-template/Main-Page-template";
 import Template1 from "../Templates/Template1";
+import Editing from './Editing-Page/Edititng.'
 
 function AllRoutes() {
   return (
@@ -39,7 +40,7 @@ function AllRoutes() {
             <Route
               key={i.path}
               path={`/start-page/:id`}
-              element={<Template1 />}
+              element={<Editing />}
             />
           )
       })}

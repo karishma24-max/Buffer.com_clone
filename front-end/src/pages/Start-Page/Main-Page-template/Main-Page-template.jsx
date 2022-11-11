@@ -1,33 +1,33 @@
 import { Box, Divider, Grid, GridItem, Heading, Text, Image } from "@chakra-ui/react"
 import { useNavigate } from "react-router-dom"
-import { getId, getTemplate} from "../../../redux/Template/template.action"
+import { getId, getTemplate, updateTemplate} from "../../../redux/Template/template.action"
 import {useDispatch} from "react-redux"
 
 export const template_arr = [
     {
-    id : "636df8ea89fa2c93fa685748",
+    id : "636e69afc9e9d35240b19385",
     template: "https://buffer-start-page.s3.amazonaws.com/presets/Default_X2.png",
     title : "Traveler",
-    path : "636df8ea89fa2c93fa685748",
+    path : "636e69afc9e9d35240b19385",
     
     },
     {
-    id : "636df8ea89fa2c93fa685749",
+    id : "636e69afc9e9d35240b19386",
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Flower_X2.png",
     title : "Flowers Shop",
-    path : "636df8ea89fa2c93fa685749",
+    path : "636e69afc9e9d35240b19386",
     },
     {
-    id : "636df8ea89fa2c93fa68574a",
+    id : "636e69afc9e9d35240b19387",
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Pizza_X2.png",
     title : "Pizza",
-    path : "636df8ea89fa2c93fa68574a"
+    path : "636e69afc9e9d35240b19387"
     },
     {
-    id : "636df8ea89fa2c93fa68574b",
+    id : "636e69afc9e9d35240b19388",
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Alexoo_X2.png",
     title : "Alexo",
-    path : "636df8ea89fa2c93fa68574b"
+    path : "636e69afc9e9d35240b19388"
     }
 ]
 
@@ -40,7 +40,6 @@ export const MainPage_Template = () => {
     const handelTemplateNaviate = (path , id) => {
         Navigate(`./${path}`)
         dispatch(getTemplate(id))
-        dispatch(getId(id))
         
     }
     
