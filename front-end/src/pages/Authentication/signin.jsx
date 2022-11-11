@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./signin.css"
 // import BLSignin from "./images/BLSignin.png"
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 
 const init = {
@@ -10,6 +11,7 @@ const init = {
 }
 
 const getusers = async ()=>{
+    let navigate = useNavigate();
     let data = await fetch("http://localhost:8080/user")
     data = data.data;
     console.log(data);
@@ -34,13 +36,15 @@ const Signin = ()=>{
         console.log(data);
         axios({
             method: 'post',
-            url: 'http://localhost:8080/user',
+            url: 'http://localhost:8080/user/signin',
             data: data
         })
         .then((res)=>{
             console.log(res)
             // Naviagete to next page ; 
-            alert("..Success")
+            alert("..Success");
+            navigate("./start-page")
+
         })
         .catch( (error) => {
             console.log(error.message);
@@ -79,7 +83,7 @@ const Signin = ()=>{
                         </div> 
 
                         <div id="cafp">
-                            <button id="CRA">Creat an account</button>
+                            <button onClick={()=>navigate("./signup")} id="CRA">Creat an account</button>
                             <button id="FRP">Forgot Password</button>
                         </div>     
                         

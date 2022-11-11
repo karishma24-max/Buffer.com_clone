@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box } from "@chakra-ui/react";
 import "./signup.css"
 import axios from "axios";
+import {  useNavigate } from "react-router-dom";
 // import blueLackSignimg from "../../../public/assets/blueLackSignimg"
 import ReCAPTCHA from "react-google-recaptcha";
 const init = {
@@ -10,6 +11,7 @@ const init = {
     password:""
 }
 const Signup = () =>{
+    let navigate = useNavigate();
     const [disable, setDisable] = useState(false);
     const [data , setData] = useState(init);
     const [captcha , setcaptcha] = useState(false);
@@ -41,16 +43,17 @@ const Signup = () =>{
         }
         else{
             try{
-                axios.post("http://localhost:8080/user",data)
-            // console.log("done");
+                axios.post("http://localhost:8080/user/signup",data)
+            // console.log("done");-
             // setData(init)
             .then(()=>{
                 console.log("done")
                 alert("Success")
+                navigate("./start-page")
             })
             }catch(err){
                 console.log(err)
-                
+                alert(err.data)
             }
             
             
@@ -130,7 +133,7 @@ const Signup = () =>{
                 </div>
                 <div className="lastdivs">
                     <button>Buffer's Terms Of Service</button>
-                    <button>Already Have an Account?</button>
+                    <button onClick={()=>navigate("signin")}>Already Have an Account?</button>
                 </div>
             </div>
         </div>

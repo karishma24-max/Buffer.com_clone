@@ -101,13 +101,15 @@
 }
 .unilimited{
     margin-top:5px;
+    margin-bottom: 5px;
 }
 .unilimited>p{
     text-align: left;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     color: #3D3D3D;
     margin-left: 2px;
+    
 }
 .freetrailbtn{
     background-color: blue;
