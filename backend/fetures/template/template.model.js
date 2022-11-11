@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 
 const TemplateSchema = new mongoose.Schema(
   {
+    name: {
+      type: String,
+      required: true,
+    }
+    ,heading:{type: String},
     image1display : {type: String},
     image1boxSize : {type: String},
     image1objectFit : {type: String},
@@ -34,7 +39,5 @@ const TemplateSchema = new mongoose.Schema(
   }
 );
 
-
 const Template = mongoose.model("template", TemplateSchema);
-
 module.exports = Template;

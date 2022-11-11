@@ -8,7 +8,6 @@ server.get('/',async(req,res)=>{
     res.send(user)
 })
 
-
 server.post("/signup", async (req, res) => {
     let { name, email, password } = req.body;
   
