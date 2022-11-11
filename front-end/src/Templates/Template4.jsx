@@ -2,7 +2,7 @@ import { Box, Button, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import Styles from "./Template4.css";
 // hashim you can send the props to this components from start page input elements
-const Template4 = () => {
+const Template4 = ({data}) => {
   // hashim you can send the props to this components from start page input elements
   return (
     <Box className="main">
@@ -15,12 +15,12 @@ const Template4 = () => {
               objectFit="cover"
               borderRadius="50%"
               // hashim you can send the props to this components from start page input elements src
-              src="https://buffer-start-page-uploads.s3.amazonaws.com/defaults/alexoo/alexoo-profile.png"
+              src={data.image1src}
               alt="main logo"
             />
           </Box>
-          <Heading color="white">Alexoo</Heading>
-          <Text color="white">New album is OUT NOW!</Text>
+          <Heading color="white">{data.heading1content}</Heading>
+          <Text color="white">{data.text1content}</Text>
         </Box>
       </Box>
       {/* padding="35px 170px 35px 170px" */}
@@ -30,7 +30,7 @@ const Template4 = () => {
           width="380px"
           padding="35px 50px 35px 50px"
         >
-          Never know (New Song)
+          {data.button1content}
         </Button>
       </Box>
       <Box>
@@ -39,19 +39,17 @@ const Template4 = () => {
           width="380px"
           padding="35px 50px 35px 50px"
         >
-          Ask me Anything
+          {data.button2content}
         </Button>
       </Box>
-      {/* <Box className="description1">
+      <Box className="description1">
         <Text>
-          Tell your story, connect with your audience. With text blocks, you can
-          easily share news, announcements or share your story with your
-          audience
+          {data.description2content}
         </Text>
-      </Box> */}
+      </Box>
       <Box width="380px" margin="auto">
         <Image
-          src="https://buffer-start-page-uploads.s3.amazonaws.com/defaults/alexoo/alexoo-image1.png"
+          src={data.image2src}
           alt="mid"
           borderRadius="10px"
         />
@@ -62,7 +60,7 @@ const Template4 = () => {
           width="380px"
           padding="35px 50px 35px 50px"
         >
-          Pre-Order my new album
+          {data.button3content}
         </Button>
       </Box>
       <Box>
@@ -71,48 +69,14 @@ const Template4 = () => {
           width="380px"
           padding="35px 50px 35px 50px"
         >
-          Watch now on Youtube
+          {data.button4content}
         </Button>
-      </Box>
-      <Box
-        width="380px"
-        margin="auto"
-        backgroundColor="#f5f5f5"
-        borderRadius="10px"
-      >
-        <Image
-          src="https://buffer-start-page-uploads.s3.amazonaws.com/defaults/pizza/pizza-image2.png"
-          alt="mid"
-          borderRadius="10px"
-        />
-        <Text>We put 100% love and dedication in our pizza</Text>
-      </Box>
-      {/* <Box className="description1">
-        <Text>
-          We use only fresh products and take care of each dish in detail. Our
-          pizzas are varied in order to satisfy all the tastes and preferences
-          of our customers, although they can also choose the ingredients they
-          prefer.
-        </Text>
-      </Box> */}
-      <Box
-        width="380px"
-        margin="auto"
-        backgroundColor="#f5f5f5"
-        borderRadius="10px"
-      >
-        <Image
-          src="https://buffer-start-page-uploads.s3.amazonaws.com/defaults/pizza/pizza-image3.png"
-          alt="mid"
-          borderRadius="10px"
-        />
-        <Text>The Best Homemade Pizza You'll Ever Eat</Text>
       </Box>
       <div className="video-responsive">
         <iframe
           width="750"
           height="480"
-          src={`https://www.youtube.com/embed/cxB4ACaaR4I`}
+          src={data.iframesrc}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

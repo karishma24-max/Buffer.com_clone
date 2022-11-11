@@ -9,7 +9,7 @@ const Publishing = () => {
     
 
   return (
-    <Flex >
+    <Flex w="100%">
     <Sidebar/>
     <Calender startingDate={new Date()}/>
    </Flex>

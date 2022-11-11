@@ -1,19 +1,5 @@
-import { Box,
-     Button,
-     Drawer,
-     DrawerBody,
-     DrawerCloseButton,
-     DrawerContent,
-     DrawerFooter,
-     DrawerHeader,
-     DrawerOverlay,
-     Input,
-     Text,
-     useDisclosure
-     } from "@chakra-ui/react";
-
+import { Box , useDisclosure , Text } from "@chakra-ui/react"
 import React from "react"
-import {TriangleDownIcon} from "@chakra-ui/icons"
 import {GoTriangleLeft, GoTriangleRight} from "react-icons/go"
 
 const drawerItem = [
@@ -55,7 +41,7 @@ const drawerItem = [
 
 export default function DrawerComponents() {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const btnRef = React.useRef()
+
     
     const width = isOpen ? '5%' : '100%'
     const display = isOpen ? 'block' : "none"

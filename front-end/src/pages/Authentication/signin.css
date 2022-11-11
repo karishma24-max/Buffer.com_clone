@@ -57,10 +57,11 @@
 #inputs{
     align-items: left;
     width: 100%;
-    margin-top: 3%;
+    margin-top: 1%;
     height: 50px;
     margin-right: 90%;
     border-radius: 10px;
+    border: 2px solid #ccc;
    
 }
 #loginbtn{
@@ -142,9 +143,11 @@
     #inputs{
         width: 50%;
         margin-right: 0%;
+        margin-left: 24%;
     }
     #loginbtn{
         width: 50%;
+        margin-left: 24%;
     }
     #cafp{
         width: 50%;
@@ -154,6 +157,9 @@
     #suppordiv{
         width:50%;
         margin-left: 25%;
+    }
+    #lastdiv{
+        width: 60%;
     }
     
 }
