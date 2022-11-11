@@ -14,6 +14,8 @@ import {
   MainPage_Template,
   template_arr,
 } from "./Start-Page/Main-Page-template/Main-Page-template";
+
+import SignUp from "./Auth/SignUp"
 function AllRoutes() {
   return (
     <Routes>
@@ -28,6 +30,7 @@ function AllRoutes() {
       <Route path="/customersdemo" element={<Customers />} />
       <Route path="/start-page" element={<MainPage_Template />} />
       <Route path="/signin" element={<Signin />} />
+      <Route path="/register" element={<SignUp />} />
 
       {template_arr.map((i) => {
         if (i.file) {
