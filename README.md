@@ -8,11 +8,11 @@
 
 # User Authentication api paths
 
-- POST -Registeration - /user/signup - name,email,password
-- POST -Login - /user/signin - email,password
-- DELETE - /user/delete - email
-- PATCH - /user/edit - email,newemail,newpassword
-- GET - allusers - /user 
+- POST -Registeration - https://bluelock.cyclic.app/user/signup - required fields(name,email,password)
+- POST -Login - https://bluelock.cyclic.app/user/signin - required fields(email,password)
+- DELETE - https://bluelock.cyclic.app/user/delete - required filed -email
+- PATCH - https://bluelock.cyclic.app/user/edit - required fields -(email,newemail,newpassword)
+- GET - allusers - https://bluelock.cyclic.app/user
 
 /* CASE SENSITIVE */
 
