@@ -19,5 +19,5 @@
 # Template JSON server api
 You have to use --PORT 8080
 
-- GET http://localhost:8080/Template
-- Individualy http://localhost:8080/Template/{id} --id params
+- GET Templates - https://bluelock.cyclic.app/template
+- GET Individual Template -  https://bluelock.cyclic.app/template/:id params
