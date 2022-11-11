@@ -9,7 +9,6 @@ const userRouter = require("./fetures/users/user.router.js")
 const PORT = process.env.PORT;
 const URL = process.env.URL;
 
-
 server.get("/",(req,res)=>{
     res.send("Hello world!")
 })
