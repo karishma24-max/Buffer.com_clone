@@ -23,4 +23,4 @@
 # calender api's
 
 - GET posts - https://bluelock.cyclic.app/post
--POST posts - https://bluelock.cyclic.app/post
+- POST posts - https://bluelock.cyclic.app/post
