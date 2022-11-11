@@ -39,7 +39,7 @@ const Signin = ()=>{
             console.log(res)
             // Naviagete to next page ; 
             alert("..Success");
-            navigate("./start-page")
+            navigate("/publish")
 
         })
         .catch( (error) => {
@@ -47,6 +47,26 @@ const Signin = ()=>{
             // alert("Please Enter The Valid Credentioals");
             seterror(error.message);
         });
+    }
+
+    const fake = () =>{
+        if(data.email === ""){
+            alert("Please Enter Valid email")
+        }else if(data.password === ""){
+            alert("Please Enter Valid Password")
+        }else{
+        axios.post('https://bluelock.cyclic.app/user/signin', {
+           email: data.email,
+            password: data.password
+          })
+          .then(function (response) {
+            console.log(response.data.token);
+          })
+          .catch(function (error) {
+            console.log(error.message);
+            alert(error.message)
+          });
+        }
     }
     
    
@@ -74,12 +94,13 @@ const Signin = ()=>{
                         </div>
 
                         <div>
-                            <button id="loginbtn" onClick={()=>handleSubmit(seterror)}>LOGIN</button>
+                            <button id="loginbtn" onClick={()=>handleSubmit(seterror)} >LOGIN</button>
                             {error && <h1>{error}</h1>}
+                            {/* onClick={()=>handleSubmit(seterror)} */}
                         </div> 
 
                         <div id="cafp">
-                            <button onClick={()=>navigate("./signup")} id="CRA">Creat an account</button>
+                            <button onClick={()=>navigate("/signup")} id="CRA">Creat an account</button>
                             <button id="FRP">Forgot Password</button>
                         </div>     
                         

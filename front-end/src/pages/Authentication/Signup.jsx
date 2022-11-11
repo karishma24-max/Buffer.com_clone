@@ -72,7 +72,7 @@ const Signup = () =>{
             //     console.log(err)
             //     alert(err.response.data)
             // }
-            axios.post('http://localhost:8080/user/signup', {
+            axios.post('https://bluelock.cyclic.app/user/signup', {
             name: data.name,
             email: data.email,
             password:data.password
@@ -81,17 +81,18 @@ const Signup = () =>{
                 console.log(response.data);
                 console.log(`New user Created on ${response.data.user.createdAt}..user id:${response.data.user._id}`)
                 alert("Sign in SuccessFull")
-                navigate("/start-page")
+                navigate("/publish")
             }, (error) => {
-                console.log(error.response.data);
+               if(error.response.data){
                 alert(error.response.data)
                 if(error.response.data === 'we can"t able to create email alreay in use'){
                     setExistemail(true)
                     window.scrollBy(0,100)
                 }
+               }else{
+                console.log(error)
+               }
             });
-            
-            
         }
         
     }
