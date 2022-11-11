@@ -24,6 +24,7 @@
 
 #headingdiv{
     margin-top: 5%;
+    margin-left: 120px;
 }
 #headingline{
     font-style: normal;
@@ -36,16 +37,16 @@
 }
 #formdiv{
     /* border: 2px solid red; */
-    margin: auto;
-    width: 60%;
+    /* width: 0%; */
     margin-top: 50px;
+    margin-left: 50px;
 }
 .input{
     /* border: 2px red;
     width: 100%;
     height: 48px; */
 
-    width: 100%;
+  width: 83%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -71,14 +72,16 @@
 .inputdiv{
     margin-top: 3px;
     /* border: 5px gray; */
-    width: 100%;
+    width: 70%;
     /* background-color: gray; */
     height: 49px;
     margin-bottom: 30px;
+    margin: auto;
 }
 #catptchdiv{
     /* border: 2px solid red; */
-    margin-top: 10px;
+    margin-top: 25px;
+    margin-left: 120px;
 }
 .FullPackage{
     border: 2px solid #ccc;
@@ -86,6 +89,8 @@
     height: 100px;
     display: flex;
     gap: 40px;
+    margin-left: 115px;
+    width: 60%;
 }
 .fullpack{
     color:"#3d3d3d";
@@ -128,6 +133,18 @@
     border-radius: 10px;
     padding: 5px;
 }
+.lastdivs{
+    /* border: 2px solid #ccc; */
+    margin-top: 0px;
+    height: 100px;
+    display: flex;
+    gap: 40px;
+    margin-left: 115px;
+    width: 60%;
+    justify-content: space-between;
+}
+
+
 /* 700 Screen ---- Size */
 @media only screen and (max-width: 800px) {
     .div2 {
@@ -141,6 +158,23 @@
     }
     .FullPackage{
         display: block;
+    }
+    #headingdiv{
+        margin-left: 100px;
+    }
+    #catptchdiv{
+        /* border: 2px solid red; */
+        margin-top: 25px;
+        margin-left: 100px;
+    }
+    .FullPackage{
+        margin-left: 100px;
+    }
+    .freetrailbtn{
+        margin-left: 15px;
+    }
+    .freetrailbtn2{
+        margin-left: 15px;
     }
   }
 
@@ -158,20 +192,32 @@
     
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 600px) {
     .FullPackage{
         display: block;
         height: 170px;
+        margin-left: 70px;
     }
     .freetrailbtn{
         width: 90%;
         height:50px ;
-        margin-top: -1px;
+        margin-top: 5px;
     }
     .freetrailbtn2{
         width: 90%;
         height:50px ;
-        margin-top: -1px;
+        margin-top: 8px;
+    }
+    #headingdiv{
+        margin-left: 60px;
+    }
+    #catptchdiv{
+        /* border: 2px solid red; */
+        margin-top: 25px;
+        margin-left: 70px;
+    }
+    .lastdivs{
+        margin-left: 80px;
     }
     
   }

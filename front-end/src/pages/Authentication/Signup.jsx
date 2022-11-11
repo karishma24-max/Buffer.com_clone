@@ -128,17 +128,16 @@ const Signup = () =>{
                         <button  onClick={HandleSubmit}   className="freetrailbtn2" >Sign up</button>
                     </div>
                 </div>
-
-                    <div style={{display:"flex", justifyContent:"space-between",marginTop:"10px"}}>
-                        <h2>Buffer's Terms of Service</h2>
-                        <button>alredy have an account?</button>
-                    </div> 
+                <div className="lastdivs">
+                    <button>Buffer's Terms Of Service</button>
+                    <button>Already Have an Account?</button>
+                </div>
             </div>
-                  
         </div>
+         
 
              <div className="div2">
-                <img id="div2imhg" src="https://raw.githubusercontent.com/karishma24-max/aberrant-coast-299/main/front-end/public/assets/blueLockSignimg.png?token=GHSAT0AAAAAABZIGXPFMMUMDXJZLJGU4SHMY3N2BUQ" alt="" />
+                <img id="div2imhg" src="https://www.linkpicture.com/q/blueLockSignimg.png" alt="" />
              </div>
             
         </div>

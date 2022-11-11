@@ -94,7 +94,7 @@ const Signin = ()=>{
 
 
             <div id="div2">
-                <img id="BLSignimg" src="https://github.com/karishma24-max/aberrant-coast-299/blob/main/front-end/public/assets/BLSignin.png?raw=true" alt="" />
+                <img id="BLSignimg" src="https://www.linkpicture.com/q/BLSignin.png" alt="IMG" />
             </div>
         </div>
     )
