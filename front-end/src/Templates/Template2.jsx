@@ -2,10 +2,13 @@ import { Box, Button, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import Styles from "./Template2.css";
 // hashim you can send the props to this components from start page input elements
-const Template2 = () => {
+const Template2 = ({data}) => {
   // hashim you can send the props to this components from start page input elements
+
+  console.log(data)
+  
   return (
-    <Box className="main">
+   data && data.image1src && <Box className="main">
       <Box className="head">
         <Box className="head-div">
           <Box display="flex" justifyContent="center">
@@ -15,32 +18,33 @@ const Template2 = () => {
               objectFit="cover"
               borderRadius="50%"
               // hashim you can send the props to this components from start page input elements src
-              src="https://buffer-start-page-uploads.s3.amazonaws.com/defaults/flowers/flowers-shop-profile.png"
+              src={data.image1src}
               alt="main logo"
             />
           </Box>
-          <Heading color="white">Flowers Shop</Heading>
-          <Text color="white">Send Flowers to Family and Friends</Text>
+          <Heading color="white">{data.heading1content}</Heading>
+          <Text color="white">{data.text1content}</Text>
         </Box>
       </Box>
       {/* padding="35px 170px 35px 170px" */}
       <Box>
         <Button colorScheme="green" width="380px" padding="35px 50px 35px 50px">
-          Shop Flowers
+          {data.button1content}
         </Button>
       </Box>
       <Box width="380px" margin="auto">
         <Image
-          src="https://buffer-start-page-uploads.s3.amazonaws.com/defaults/flowers/flowers-shop-image1.png"
+          src={data.image2src}
           alt="mid"
           borderRadius="10px"
         />
+        <Box>
+          <Text>{data.text2content}</Text>
+        </Box>
       </Box>
       <Box className="description1">
         <Text>
-          Show someone you care with a blooming lovely bunch of flowers. Whether
-          it's for a birthday, Mother's Day (or Father's Day), or even just for
-          yourself.
+          {data.descriptioncontent}
         </Text>
       </Box>
       <Box
@@ -50,11 +54,11 @@ const Template2 = () => {
         borderRadius="10px"
       >
         <Image
-          src="https://buffer-start-page-uploads.s3.amazonaws.com/defaults/flowers/flowers-shop-image2.png"
+          src={data.image3src}
           alt="mid"
           borderRadius="10px"
         />
-        <Text>Hand-delivered with care and attention</Text>
+        <Text>{data.text3content}</Text>
       </Box>
       <Box
         width="380px"
@@ -63,15 +67,15 @@ const Template2 = () => {
         borderRadius="10px"
       >
         <Image
-          src="https://buffer-start-page-uploads.s3.amazonaws.com/defaults/flowers/flowers-shop-image3.png"
+          src={data.image4src}
           alt="mid"
           borderRadius="10px"
         />
-        <Text>Gorgeous, hand-tied bouquets</Text>
+        <Text>{data.text4content}</Text>
       </Box>
       <Box>
         <Button colorScheme="green" width="380px" padding="35px 50px 35px 50px">
-          About Us
+          {data.button2content}
         </Button>
       </Box>
       <div className="video-responsive">
