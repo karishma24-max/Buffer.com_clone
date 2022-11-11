@@ -1,9 +1,11 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+
+import { Switch } from '@chakra-ui/react'
+import React from 'react'
+import {Route,Routes} from "react-router-dom"
+import Home from './Home'
+import Publishing from './Publish/Publishing'
 import Signup from "./Authentication/Signup";
-import Home from "./Home";
 import Publish from "./Navbar_Pages/Publish";
-import Publishing from "./Publish/Publishing";
 import Signin from "./Authentication/signin";
 import Channels from "./Navbar_Pages/Channels";
 import Pricing from "./Navbar_Pages/Pricing";
@@ -14,6 +16,8 @@ import {
   MainPage_Template,
   template_arr,
 } from "./Start-Page/Main-Page-template/Main-Page-template";
+import Template1 from "../Templates/Template1";
+
 function AllRoutes() {
   return (
     <Routes>
@@ -30,25 +34,17 @@ function AllRoutes() {
       <Route path="/signin" element={<Signin />} />
 
       {template_arr.map((i) => {
-        if (i.file) {
+
           return (
             <Route
               key={i.path}
-              path={`/start-page/${i.path}`}
-              element={i.file}
+              path={`/start-page/:id`}
+              element={<Template1 />}
             />
-          );
-        } else {
-          return (
-            <Route
-              key={i.path}
-              path={`/start-page/${i.path}`}
-              element={<h1>No data is here</h1>}
-            />
-          );
-        }
+          )
       })}
     </Routes>
   );
+
 }
 export default AllRoutes;

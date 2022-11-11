@@ -1,44 +1,33 @@
 import { Box, Divider, Grid, GridItem, Heading, Text, Image } from "@chakra-ui/react"
 import { useNavigate } from "react-router-dom"
-import Template2 from "../../../Templates/Template2"
-import Template1 from "../../../Templates/Template1"
-import "./MainPage.module.css"
-import Editing from "../../Editing-Page/Edititng."
+import { getId, getTemplate} from "../../../redux/Template/template.action"
+import {useDispatch} from "react-redux"
 
 export const template_arr = [
     {
-    id : 1,
+    id : "636df8ea89fa2c93fa685748",
     template: "https://buffer-start-page.s3.amazonaws.com/presets/Default_X2.png",
     title : "Traveler",
-    path : "Traveler-Template",
-    file : <Template1 />
+    path : "636df8ea89fa2c93fa685748",
     
     },
     {
+    id : "636df8ea89fa2c93fa685749",
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Flower_X2.png",
     title : "Flowers Shop",
-    path : "Flowers-Shop-Template",
-    file : <Template2 />
+    path : "636df8ea89fa2c93fa685749",
     },
     {
+    id : "636df8ea89fa2c93fa68574a",
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Pizza_X2.png",
     title : "Pizza",
-    path : "Pizza-Template"
+    path : "636df8ea89fa2c93fa68574a"
     },
     {
+    id : "636df8ea89fa2c93fa68574b",
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Alexoo_X2.png",
     title : "Alexo",
-    path : "Alexo-Template"
-    },
-    {
-    template : "https://buffer-start-page.s3.amazonaws.com/presets/Alba_X2.png",
-    title : "Alba",
-    path : "Alba-Template"
-    },
-    {
-    template : "https://buffer-start-page.s3.amazonaws.com/presets/Novika_X2.png",
-    title : "Novika",
-    path : "Novika-Template"
+    path : "636df8ea89fa2c93fa68574b"
     }
 ]
 
@@ -46,11 +35,12 @@ export const template_arr = [
 
 export const MainPage_Template = () => {
     const Navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const handelTemplateNaviate = (path , id) => {
-        
-        console.log(id)
         Navigate(`./${path}`)
+        dispatch(getTemplate(id))
+        dispatch(getId(id))
         
     }
     
