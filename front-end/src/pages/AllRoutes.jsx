@@ -3,7 +3,7 @@ import React from 'react'
 import {Route,Routes} from "react-router-dom"
 import Signup from './Authentication/Signup'
 import Home from './Home'
-import { MainPage_Template, template_arr } from './Start-Page/Main-Page-template/Main-Page-template'
+
 
 import Publishing from './Publish/Publishing'
 
@@ -17,7 +17,7 @@ function AllRoutes() {
     <Route path="/publish" element={<Publishing/>}/>
 
     <Route path="/start-page" element={<MainPage_Template/>}/>
-    {
+    {/* {
       template_arr.map((i)=> {
         if(i.file) {
           return <Route path={`/start-page/${i.path}`} element={i.file} /> 
@@ -25,7 +25,7 @@ function AllRoutes() {
           return <Route path={`/start-page/${i.path}`} element={<h1>No data is here</h1>} />
         }
       })
-    }
+    } */}
 
   </Routes>)
 }
