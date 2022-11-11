@@ -16,6 +16,7 @@ import {
   MainPage_Template,
   template_arr,
 } from "./Start-Page/Main-Page-template/Main-Page-template";
+
 import Template1 from "../Templates/Template1";
 import Editing from './Editing-Page/Edititng.'
 
@@ -33,7 +34,6 @@ function AllRoutes() {
       <Route path="/customersdemo" element={<Customers />} />
       <Route path="/start-page" element={<MainPage_Template />} />
       <Route path="/signin" element={<Signin />} />
-
       {template_arr.map((i) => {
 
           return (
