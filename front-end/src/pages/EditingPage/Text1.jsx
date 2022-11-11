@@ -1,8 +1,26 @@
 import { Button, Image,Collapse, Box, useDisclosure, Input } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getTemplate, updateTemplate } from "../../redux/Template/template.action";
 
-const Text1 = () => {
+const Text1 = ({id , name , inittext}) => {
   const { isOpen, onToggle } = useDisclosure();
+  const [text , setText] = useState(inittext)
+  const dispatch = useDispatch()
+
+  const handelInput = (e) => {
+    const {name , value} = e.target
+    setText(value)
+    updateTemplate(id , name , value)
+  }
+
+  useEffect(()=> {
+    dispatch(getTemplate(id))
+  } , [handelInput])
+
+
+
+
   return (
     <Box width="400px" margin="auto" marginTop="10px">
       <Button onClick={onToggle} bg="white" width="380px" justifyContent='left' p={7}> 
@@ -27,7 +45,6 @@ const Text1 = () => {
           width="400px"
         >
           <Box
-            border="1px solid black"
             height="auto"
             display="flex"
             flexDirection="column"
@@ -35,7 +52,7 @@ const Text1 = () => {
             bg="white"
           >
             <label>Text</label>
-            <Input placeholder="Enter description" />
+            <Input name={name}  onChange={handelInput} placeholder="Enter description" />
           </Box>
         </Box>
       </Collapse>

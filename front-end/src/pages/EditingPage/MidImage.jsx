@@ -34,7 +34,6 @@ const MidImage = () => {
           width="400px"
         >
           <Box
-            border="1px solid black"
             height="100px"
             display="flex"
             flexDirection="column"
@@ -45,7 +44,6 @@ const MidImage = () => {
             <Input type="file" />
           </Box>
           <Box
-            border="1px solid black"
             height="100px"
             display="flex"
             flexDirection="column"
