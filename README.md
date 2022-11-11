@@ -6,7 +6,12 @@
   It is one of the best time saving methods in the world of social media marketing. 
   Several international brands are already using it."
 
+# User Authentication api paths
 
-- Registeration - 8080/user/signup
-- Login - 8080/user/signin
-- delete - 8080/user
+- POST -Registeration - /user/signup - name,email,password
+- POST -Login - /user/signin - email,password
+- DELETE - /user/delete - email
+- PATCH - /user/edit - email,newemail,newpassword
+- GET - allusers - /user 
+
+/* CASE SENSITIVE */
