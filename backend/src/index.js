@@ -6,6 +6,7 @@ const cors = require('cors');
 server.use(express.json());
 server.use(cors());
 const userRouter = require("./fetures/users/user.router.js")
+const templateRouter = require("./fetures/template/template.router.js");
 const PORT = process.env.PORT;
 const URL = process.env.URL;
 
@@ -14,6 +15,7 @@ server.get("/",(req,res)=>{
 })
 
 server.use("/user",userRouter);
+server.use("/template",templateRouter);
 
 server.listen(PORT,async(req,res)=>{
     await connect();
