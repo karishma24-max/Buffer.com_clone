@@ -9,8 +9,8 @@ export default function Editing() {
     return (
         <>
         <DrawerComponents />
-        <Box w='100%' h='1000px' bg='aqua'>
-        </Box>
+        {/* <Box w='100%' h='1000px' bg='aqua'>
+        </Box> */}
         </>
     )
 }

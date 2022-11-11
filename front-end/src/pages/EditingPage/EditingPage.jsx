@@ -1,31 +1,24 @@
 import React from "react";
-import { Button, Collapse, Box, useDisclosure, Input } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
+import Header from "./Header";
+import ButtonComp from "./ButtonComp";
+import Text1 from "./Text1";
+import MidImage from "./MidImage";
+import Text2 from "./Text2";
+import YouTube from "./YouTube";
 const EditingPage = () => {
-  const { isOpen, onToggle } = useDisclosure();
+  //   const { isOpen, onToggle } = useDisclosure();
   return (
-    <Box p="40px" mt="4" rounded="md" shadow="md" width="400px">
-      <Button onClick={onToggle}>Click Me</Button>
-      <Collapse in={isOpen} animateOpacity>
-        <Box p="40px" color="white" mt="4" rounded="md" shadow="md">
-          <Input type="file" />
-        </Box>
-      </Collapse>
-      <br />
-      <label>Label</label>
-      <Input type="text" />
-      <label>Link</label>
-      <Input type="text" />
-      <label>Text</label>
-      <Input type="text" />
-      <Box p="40px" color="white" mt="4" rounded="md" shadow="md">
-        <Input type="file" />
-        <label>Enter description for image</label>
-        <Input type="text" />
-      </Box>
-      <label>Text</label>
-      <Input type="text" />
-      <label>YouTube Video URL</label>
-      <Input type="text" />
+    <Box bg="#f5f5f5" w="420px" margin="auto">
+      <Heading as="h4" size="md" marginTop="10px" display="block">
+        Your Site Layout
+      </Heading>
+      <Header />
+      <ButtonComp />
+      <Text1 />
+      <MidImage />
+      <Text2 />
+      <YouTube />
     </Box>
   );
 };
