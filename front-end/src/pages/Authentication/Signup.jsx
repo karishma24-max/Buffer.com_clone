@@ -12,6 +12,7 @@ const init = {
     password:""
 }
 const Signup = () =>{
+    const[stateO, setStateO] = useState("Sign Up")
     let navigate = useNavigate();
     const [disable, setDisable] = useState(false);
     const [data , setData] = useState(init);
@@ -32,7 +33,8 @@ const Signup = () =>{
         console.log(value);
     }
 
-    const HandleSubmit = () =>{
+    const HandleSubmit = (set) =>{
+       
         if(data.name===""){
             alert("Please enter the valid name")
             setnameinput("innpput")
@@ -72,6 +74,7 @@ const Signup = () =>{
             //     console.log(err)
             //     alert(err.response.data)
             // }
+            set("Loading...")
             axios.post('https://bluelock.cyclic.app/user/signup', {
             name: data.name,
             email: data.email,
@@ -82,16 +85,21 @@ const Signup = () =>{
                 console.log(`New user Created on ${response.data.user.createdAt}..user id:${response.data.user._id}`)
                 alert("Sign in SuccessFull")
                 navigate("/publish")
+                set("Sign Up")
             }, (error) => {
                if(error.response.data){
                 alert(error.response.data)
                 if(error.response.data === 'we can"t able to create email alreay in use'){
                     setExistemail(true)
                     window.scrollBy(0,100)
+                    set("Sign Up")
                 }
                }else{
                 console.log(error)
+                set("Sign Up")
                }
+                console.log(error)
+                set("Sign Up")
             });
         }
         
@@ -179,7 +187,7 @@ const Signup = () =>{
                     </div>
                     </div>
                     <div>
-                        <button  onClick={HandleSubmit}   className="freetrailbtn2" >Sign up</button>
+                        <button  onClick={()=>HandleSubmit(setStateO)}   className="freetrailbtn2" >Sign up</button>
                     </div>
                 </div>
                 {Existemail && <p id="exitemail" onClick={()=>navigate("/signin")}> &#x26A0; There seems to be an existing Buffer account for this email. Please login.</p> }

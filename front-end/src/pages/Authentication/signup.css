@@ -152,7 +152,8 @@
 #exitemail{
     color:  red;
     font-size: small;
-   margin-right: 30%;
+    margin-left: 15%;
+    margin-top: 10px;
   
 }
 #exitemail:hover {
@@ -170,6 +171,20 @@
   outline: none;
   margin-top: 2px;
   
+}
+@media only screen and (min-width:16552) and  (max-width: 1655px){
+    #headingline{
+        margin-left:30px ;
+    }
+    #catptchdiv{
+        margin-left: 140px;
+    }
+    .FullPackage{
+        margin-left: 140px;
+    }
+    .lastdivs{
+        margin-left:140px ;
+    }
 }
 
 

@@ -4,6 +4,8 @@ import "./signin.css"
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
 
+import { CLoadingButton } from '@coreui/react-pro'
+
 
 const init = {
     email:"",
@@ -13,6 +15,8 @@ const init = {
 
 
 const Signin = ()=>{
+    const [stateO, setStateO] = useState("LOGIN")
+
     let navigate = useNavigate();
     const[data , setdata] = useState({});
 
@@ -49,7 +53,8 @@ const Signin = ()=>{
         });
     }
 
-    const fake = () =>{
+    const fake = (set) =>{
+        set("Loading....")
         if(data.email === ""){
             alert("Please Enter Valid email")
         }else if(data.password === ""){
@@ -61,10 +66,12 @@ const Signin = ()=>{
           })
           .then(function (response) {
             console.log(response.data.token);
+            set("LOGIN")
           })
           .catch(function (error) {
             console.log(error.message);
             alert(error.message)
+            set("LOGIN")
           });
         }
     }
@@ -94,9 +101,12 @@ const Signin = ()=>{
                         </div>
 
                         <div>
-                            <button id="loginbtn" onClick={()=>handleSubmit(seterror)} >LOGIN</button>
+                            <button id="loginbtn" onClick={()=>fake(setStateO)} >{stateO}</button>
                             {error && <h1>{error}</h1>}
                             {/* onClick={()=>handleSubmit(seterror)} */}
+                            {/* <CLoadingButton id="loginbtn" variant="outline" loading={stateO} onClick={() => setStateO(!stateO)}>LOGIN</CLoadingButton> */}
+      
+                            
                         </div> 
 
                         <div id="cafp">
