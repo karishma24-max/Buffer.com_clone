@@ -10,14 +10,10 @@ const init = {
     password:""
 }
 
-const getusers = async ()=>{
-    let navigate = useNavigate();
-    let data = await fetch("http://localhost:8080/user")
-    data = data.data;
-    console.log(data);
-}
+
 
 const Signin = ()=>{
+    let navigate = useNavigate();
     const[data , setdata] = useState({});
 
     const[state, setstate] = useState(false);
