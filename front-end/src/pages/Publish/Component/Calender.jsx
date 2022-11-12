@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import {ArrowBackIcon,ArrowForwardIcon } from '@chakra-ui/icons'
+import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 import { background, Box, Button, Flex, Heading, Img, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Spacer, Text, Tooltip, useDisclosure } from '@chakra-ui/react'
 
 import { AiFillFileImage } from 'react-icons/ai'
@@ -8,30 +8,32 @@ import axios from 'axios'
 import Schedule from './Schedule'
 
 // import Days from 'react-calendar/src/MonthView/Days'
-const weekday=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+const weekday = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
-const range=(end)=>{
-    const {result}=Array.from({length:end}).reduce(({result,current})=>({
-        result:[...result,current],
-        current:current+1
-    }),{result:[],current:1}
-  
+const range = (end) => {
+    const { result } = Array.from({ length: end }).reduce(({ result, current }) => ({
+        result: [...result, current],
+        current: current + 1
+    }), { result: [], current: 1 }
+
     )
 
     return result
-    
-    
+
+
 
 }
-const getdaysinmonth=(month,year)=>{
-return new Date(year,month+1,0).getDate()
+const getdaysinmonth = (month, year) => {
+    return new Date(year, month + 1, 0).getDate()
 }
 
-const getSorteddays=(month,year)=>{
-    const dayIndex= new Date(year,month,1).getDay() 
-    return [...weekday.slice(dayIndex),...weekday.slice(0,dayIndex)]
+const getSorteddays = (month, year) => {
+    const dayIndex = new Date(year, month, 1).getDay()
+    return [...weekday.slice(dayIndex), ...weekday.slice(0, dayIndex)]
 
 }
+
+
 
 
 
@@ -58,25 +60,25 @@ const Calender = ({startingDate,displaydata,userdisplay,setdata,arrdata}) => {
 const getdays=getdaysinmonth(currentMonth,currentYear)
 const { isOpen, onOpen, onClose } = useDisclosure()
 
-const nextmonth=()=>{
-    if(currentMonth<11)
-    {
-        setcurrentMonth(prev=>prev+1)
-    }
-    else{
-        setcurrentMonth(0)
-        setcurrentYear(prev=>prev+1)
-    }
-}
-    const prevmonth=()=>{
-        if(currentMonth>-0)
-        {
-            setcurrentMonth(prev=>prev-1)
+
+    const nextmonth = () => {
+        if (currentMonth < 11) {
+            setcurrentMonth(prev => prev + 1)
         }
-        else{
+        else {
+            setcurrentMonth(0)
+            setcurrentYear(prev => prev + 1)
+        }
+    }
+    const prevmonth = () => {
+        if (currentMonth > -0) {
+            setcurrentMonth(prev => prev - 1)
+        }
+        else {
             setcurrentMonth(11)
-            setcurrentYear(prev=>prev-1)
+            setcurrentYear(prev => prev - 1)
         }
+
 }
 
 
@@ -125,47 +127,32 @@ style={{
 
 
  onClick={onOpen}    ><Box w="50px" h="50px" >{day}{arrdata.map((ele)=><div >{ele.date == day? <Schedule text={ele.text} img={ele.img} id={ele.id} date={ele.date} month={current1} year={current2}/>:""}</div>)}
- 
-  
-  
-  
-  
-  
-  
-  
   </Box> 
     
   </div></Tooltip>)}</div> 
   </div>
  
   <Box>
-<Modal isOpen={isOpen} onClose={onClose} size="xl" bg="white">
-        <ModalOverlay  />
-        <ModalContent bg="white" height="500px">
-          
-          <ModalCloseButton color="grey" />
-         <ModalBody>
-         
-         
-         
-         <Box border="2px solid lightgrey" mt={10} ml={10} mr={10} mb={10} height="420px">
-         <Flex><Box w="120px" color="blue" textAlign={"center"}><Input type="file" color="grey" border="2px dotted" mr="20px" mt="50px"   name="img" onChange={handledata} / >
-        <Box ml="35px" mt="40px"> <AiFillFileImage size="50px" color="rgb(91, 87, 87)"/>
-         </Box>select your file 
-         <Input onChange ={handledata}  name="date" />
+ <Modal isOpen={isOpen} onClose={onClose} size="xl">
+                    <ModalOverlay />
+                    <ModalContent bg="white" height="500px">
 
-          </Box>
+                        <ModalCloseButton color="grey" />
+                        <ModalBody><Box border="2px solid lightgrey" mt={10} ml={10} mr={10} mb={10} height="420px">
+                            <Flex><Box w="120px" color="blue" textAlign={"center"}><Input color="grey" border="2px dotted" mr="20px" mt="50px" type="file" name="img" onChange={handledata} />
+                                <Box ml="35px" mt="40px"> <AiFillFileImage size="50px" color="rgb(91, 87, 87)" />
+                                </Box><Text ml="5px">select your file </Text></Box>
 
-        <Input placeholder="What would you like to share" name="text" onChange={handledata} w="70%" h="300px" />
+                                <Input placeholder="What would you like to share" name="text" onChange={handledata} w="70%" h="300px" />
 
-         </Flex> </Box> <Button onClick={handlesubmit}>Submit</Button></ModalBody>
-         </ModalContent>
-          </Modal>
-  
-          </Box> 
-    
-</div>
-  )
+                            </Flex> </Box> <Button onClick={handlesubmit}>Submit</Button></ModalBody>
+                    </ModalContent>
+                </Modal>
+            </Box>
+
+        </div>
+    )
+
 }
 
 export default Calender
