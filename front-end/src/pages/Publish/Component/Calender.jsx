@@ -100,7 +100,7 @@ const { isOpen, onOpen, onClose } = useDisclosure()
 
 const handlesubmit=()=>
 {
-let response=axios.post("http://localhost:8000/data",userdata)
+let response=axios.post(`process.env.REACT_APP_URL${userdata}`)
 console.log(response.data)
 setdata()
 }
