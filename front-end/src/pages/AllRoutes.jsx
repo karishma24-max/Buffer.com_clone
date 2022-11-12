@@ -19,6 +19,9 @@ import Editing from './Start-Page/Editing-Page/Edititng.'
 import PrivRoutes from '../components/PrivateRoutes';
 import SinglePublish from './Start-Page/SinglePublish';
 import NotFound from './Start-Page/NotFound';
+import Template1 from "../Templates/Template1";
+import Editing from './Editing-Page/Edititng.'
+import User from '../components/User';
 
 
 
@@ -34,6 +37,7 @@ function AllRoutes() {
       <Route path="/pricingdemo" element={<Pricing />} />
       <Route path="/blogdemo" element={<Blog />} />
       <Route path="/about" element={<About />} />
+      <Route path="/user" element={<User />} />
       <Route path="/customersdemo" element={<Customers />} />
       <Route path="/start-page" element={<PrivRoutes><MainPage_Template /></PrivRoutes>} />
       {template_arr.map((i) => {
