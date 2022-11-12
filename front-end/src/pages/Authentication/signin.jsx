@@ -4,48 +4,51 @@ import { Navigate, useNavigate } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux"
 import { login } from "../../redux/Authenticated/authenticated.action";
 
-// import { CLoadingButton } from '@coreui/react-pro'
-
+import { useToast } from '@chakra-ui/react'
 
 const init = {
     email:"",
     password:""
 }
 
+
 const Signin = ()=>{
+    const toast = useToast()
     let navigate = useNavigate();
     const[data , setdata] = useState(init);
     const dispatch = useDispatch()
     const {isAuth} = useSelector((store) => store.auth.data)
     const {loading , error} = useSelector((store) => store.auth)
 
-
     const handleChange = (e) =>{
         const {value, name} = e.target
         setdata({...data,[name]:value})
     }
-
     const handelSubmit = () => {
-      dispatch(login(data))
+        dispatch(login(data))
     }
+
+    
 
     if(isAuth) {
+        toast({
+            title: 'Sign in SuccessFull.',
+            description: "Welcome Back To Buffer.",
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          });
         return <Navigate to={"/publish"} />
     }
-
     
-  
     
-   
     return (
         <div id="Container">
-           
             <div id="div1">
                 <div id="bufferimgdiv">
                     <img id="bufferimg" src="https://static.buffer.com/login/public/img/buffer-logo.svg" alt="" />
                 </div>
 
-            
                 <div id="formdiv">
 
                         <h1 id="LOGIN">Log in</h1>
@@ -61,9 +64,7 @@ const Signin = ()=>{
 
                         <div>
                             <button id="loginbtn" onClick={handelSubmit}>{loading ? "signinng" : 'LOGIN'}</button>
-                            { <h1>{error}</h1>}
-      
-                            
+                            { <h1 id="errormsg">{error}</h1>}
                         </div> 
 
                         <div id="cafp">

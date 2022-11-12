@@ -34,6 +34,7 @@
     margin-bottom: 8px;
     color: #3D3D3D;
     text-align: left;
+    margin-left: 20px;
 }
 #formdiv{
     /* border: 2px solid red; */
@@ -85,7 +86,7 @@
 #catptchdiv{
     /* border: 2px solid red; */
     margin-top: 25px;
-    margin-left: 120px;
+    margin-left: 140px;
 }
 .FullPackage{
     border: 2px solid #ccc;
@@ -93,7 +94,7 @@
     height: 100px;
     display: flex;
     gap: 40px;
-    margin-left: 115px;
+    margin-left: 135px;
     width: 60%;
 }
 .fullpack{
@@ -145,7 +146,7 @@
     height: 100px;
     display: flex;
     gap: 40px;
-    margin-left: 115px;
+    margin-left: 130px;
     width: 60%;
     justify-content: space-between;
 }
@@ -172,7 +173,7 @@
   margin-top: 2px;
   
 }
-@media only screen and (min-width:16552) and  (max-width: 1655px){
+/* @media only screen and (min-width:16552) and  (max-width: 1655px){
     #headingline{
         margin-left:30px ;
     }
@@ -185,7 +186,7 @@
     .lastdivs{
         margin-left:140px ;
     }
-}
+} */
 
 
 /* 700 Screen ---- Size */
@@ -203,7 +204,7 @@
         display: block;
     }
     #headingdiv{
-        margin-left: 100px;
+        margin-left: 80px;
     }
     #catptchdiv{
         /* border: 2px solid red; */
@@ -247,8 +248,8 @@
     .freetrailbtn{
         width: 90%;
         height:40px ;
-        margin-top: 5px;
-        margin-top: -3px;
+       
+        margin-top: 20px;
     }
     .freetrailbtn2{
         width: 90%;
