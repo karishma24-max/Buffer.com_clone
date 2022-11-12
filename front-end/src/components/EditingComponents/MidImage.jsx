@@ -12,7 +12,7 @@ const MidImage = () => {
   const { isOpen, onToggle } = useDisclosure();
   return (
     <Box width="400px" margin="auto" marginTop="10px">
-      <Button onClick={onToggle} bg="white" width="380px" justifyContent='left' p={7}>
+      <Button onClick={onToggle} bg="white" width="380px" justifyContent='left' p={7} border="1px solid #bfc5c6">
       <Image
             boxSize="32px"
             objectFit="cover"
@@ -24,7 +24,7 @@ const MidImage = () => {
       </Button>
       <Collapse in={isOpen} animateOpacity>
         <Box
-          bg="#f5f5f5"
+          bg="white"
           mt="4"
           rounded="md"
           shadow="md"
@@ -32,6 +32,7 @@ const MidImage = () => {
           flexDirection="column"
           gap="2rem"
           width="400px"
+          border="1px solid #878787"
         >
           <Box
             height="100px"
@@ -39,6 +40,7 @@ const MidImage = () => {
             flexDirection="column"
             gap="1rem"
             bg="white"
+            marginLeft='20px'
           >
             <label>Add photo</label>
             <Input type="file" />
@@ -49,6 +51,7 @@ const MidImage = () => {
             flexDirection="column"
             gap="1rem"
             bg="white"
+            marginLeft='20px'
           >
             <label>Image caption</label>
             <Input type="text" />

@@ -2,6 +2,7 @@
     display: flex;
     width: 100%;
     height: 630px;
+    gap: 10px;
 }
 #div1{
     /* border: 2px solid red; */
@@ -24,6 +25,10 @@
     width: 100px;
     margin-left: 3%;
 }
+#errormsg{
+    color: red;
+    margin: 5px;
+}
 #LOGIN{
     font-style: normal;
     font-weight: bold;
@@ -31,6 +36,7 @@
     font-size: 32px;
     margin-bottom: 20px;
     color: #3D3D3D;
+    margin-top: 10px;
 
     /* font-weight: 500; */
     /* font-size: 14px; */

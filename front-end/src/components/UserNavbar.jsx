@@ -13,13 +13,14 @@ import {
   MenuItem,
   Text,
 } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AiOutlineTeam } from "react-icons/ai";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/Authenticated/authenticated.action";
 function UserNavbar() {
-  let user = JSON.parse(localStorage.getItem("user")) || {
-  email: "BlueLock",name:"BlueLock",password:"BlueLock"
-  };
+  let data = JSON.parse(localStorage.getItem("user"))
+  const dispatch = useDispatch()
   return (
     <Box backgroundColor={"#FFFFFF"} m="10px 0" fontFamily={"sans-serif"}>
       <Flex h="70px" w="95%" m="auto">
@@ -89,7 +90,7 @@ function UserNavbar() {
             </Button>
           </NavLink>
           {/*  //add the navigation link to start page */}
-          <NavLink to=""> 
+          <NavLink to="/start-page"> 
             <Button
               _hover={{ color: "blue" }}
               background={"none"}
@@ -195,7 +196,7 @@ function UserNavbar() {
               rightIcon={<ChevronDownIcon />}
             >
               <Box display={"Flex"} alignItems="center">
-                <Text> {user.email}</Text>{" "}
+                <Text>{data.email}</Text>{" "}
                 <Image src="https://i.ibb.co/VL94j8H/user.png" alt="user" />
               </Box>
             </MenuButton>
@@ -203,7 +204,17 @@ function UserNavbar() {
               <NavLink to="/user"><MenuItem>Account</MenuItem></NavLink>
               <MenuItem>My preferences</MenuItem>
               <MenuItem>Channels</MenuItem>
-              <MenuItem>Team</MenuItem>
+     <MenuItem>
+                <Button
+                  background={"none"}
+                  _hover={"none"}
+                  color="red"
+                  onClick={()=>dispatch(logout())}  // pass the dispatch function to remove the user data in redux as well as Localstorage
+                >
+                  Logout
+                </Button>
+              </MenuItem>
+
             </MenuList>
           </Menu>
         </HStack>
