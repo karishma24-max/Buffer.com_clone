@@ -73,8 +73,9 @@ const Signup = () =>{
             // }catch(err){
             //     console.log(err)
             //     alert(err.response.data)
+            // https://bluelock.cyclic.app/user/signup
             // }
-            set("Loading...")
+            setStateO("Loading...")
             axios.post('https://bluelock.cyclic.app/user/signup', {
             name: data.name,
             email: data.email,
@@ -83,23 +84,24 @@ const Signup = () =>{
             .then((response) => {
                 console.log(response.data);
                 console.log(`New user Created on ${response.data.user.createdAt}..user id:${response.data.user._id}`)
+                setStateO("Sign Up")
                 alert("Sign in SuccessFull")
                 navigate("/publish")
-                set("Sign Up")
+               
             }, (error) => {
                if(error.response.data){
                 alert(error.response.data)
+                setStateO("Sign Up")
                 if(error.response.data === 'we can"t able to create email alreay in use'){
                     setExistemail(true)
                     window.scrollBy(0,100)
-                    set("Sign Up")
+                   
                 }
                }else{
                 console.log(error)
-                set("Sign Up")
+                setStateO("Sign Up")
                }
-                console.log(error)
-                set("Sign Up")
+               
             });
         }
         
@@ -187,7 +189,7 @@ const Signup = () =>{
                     </div>
                     </div>
                     <div>
-                        <button  onClick={()=>HandleSubmit(setStateO)}   className="freetrailbtn2" >Sign up</button>
+                        <button  onClick={()=>HandleSubmit(setStateO)}   className="freetrailbtn2" >{stateO}</button>
                     </div>
                 </div>
                 {Existemail && <p id="exitemail" onClick={()=>navigate("/signin")}> &#x26A0; There seems to be an existing Buffer account for this email. Please login.</p> }
