@@ -1,5 +1,4 @@
 
-import { Switch } from '@chakra-ui/react'
 import React from 'react'
 import {Route,Routes} from "react-router-dom"
 import Home from './Home'
@@ -20,11 +19,13 @@ import {
 import Template1 from "../Templates/Template1";
 import Editing from './Editing-Page/Edititng.'
 
+
 function AllRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/signin" element={<Signin />} />
       <Route path="/publish" element={<Publishing />} />
       <Route path="/toolsdemo" element={<Publish />} />
       <Route path="/channelsdemo" element={<Channels />} />
@@ -33,7 +34,6 @@ function AllRoutes() {
       <Route path="/about" element={<About />} />
       <Route path="/customersdemo" element={<Customers />} />
       <Route path="/start-page" element={<MainPage_Template />} />
-      <Route path="/signin" element={<Signin />} />
       {template_arr.map((i) => {
 
           return (
