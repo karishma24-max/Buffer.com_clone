@@ -23,7 +23,7 @@ const EditingPage = () => {
   
 
   return (
-    <Box  w="420px" margin="auto">
+    <Box  w="420px" margin="auto" bg='#f5f5f5'>
       <Heading as="h4" size="md" marginTop="10px" display="block">
         Your Site Layout
       </Heading>
