@@ -32,41 +32,45 @@ const Signin = ()=>{
         // console.log(data);
     }
   
-    const handleSubmit = (seterror) =>{
-        console.log(data);
-        axios({
-            method: 'post',
-            url: 'http://localhost:8080/user/signin',
-            data: data
-        })
-        .then((res)=>{
-            console.log(res)
-            // Naviagete to next page ; 
-            alert("..Success");
-            navigate("/publish")
+    // const handleSubmit = (seterror) =>{
+    //     console.log(data);
+    //     axios({
+    //         method: 'post',
+    //         url: 'http://localhost:8080/user/signin',
+    //         data: data
+    //     })
+    //     .then((res)=>{
+    //         console.log(res)
+    //         // Naviagete to next page ; 
+    //         alert("..Success");
+    //         navigate("/publish")
 
-        })
-        .catch( (error) => {
-            console.log(error.message);
-            // alert("Please Enter The Valid Credentioals");
-            seterror(error.message);
-        });
-    }
-
-    const fake = (set) =>{
+    //     })
+    //     .catch( (error) => {
+    //         console.log(error.message);
+    //         // alert("Please Enter The Valid Credentioals");
+    //         seterror(error.message);
+    //     });
+    // }
+    // https://bluelock.cyclic.app/user/signin
+    const handleSubmit = (set) =>{
         set("Loading....")
         if(data.email === ""){
             alert("Please Enter Valid email")
         }else if(data.password === ""){
             alert("Please Enter Valid Password")
-        }else{
+        } else {
         axios.post('https://bluelock.cyclic.app/user/signin', {
-           email: data.email,
+            email: data.email,
             password: data.password
           })
           .then(function (response) {
             console.log(response.data.token);
             set("LOGIN")
+            console.log(response.data)
+            localStorage.setItem("user",JSON.stringify(response.data));
+            alert("Login Success")
+            navigate("/publish")
           })
           .catch(function (error) {
             console.log(error.message);
@@ -74,6 +78,7 @@ const Signin = ()=>{
             set("LOGIN")
           });
         }
+        
     }
     
    
@@ -101,7 +106,7 @@ const Signin = ()=>{
                         </div>
 
                         <div>
-                            <button id="loginbtn" onClick={()=>fake(setStateO)} >{stateO}</button>
+                            <button id="loginbtn" onClick={()=>handleSubmit(setStateO)} >{stateO}</button>
                             {error && <h1>{error}</h1>}
                             {/* onClick={()=>handleSubmit(seterror)} */}
                             {/* <CLoadingButton id="loginbtn" variant="outline" loading={stateO} onClick={() => setStateO(!stateO)}>LOGIN</CLoadingButton> */}
