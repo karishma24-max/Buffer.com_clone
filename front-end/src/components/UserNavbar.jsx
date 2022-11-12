@@ -90,7 +90,7 @@ function UserNavbar() {
             </Button>
           </NavLink>
           {/*  //add the navigation link to start page */}
-          <NavLink to=""> 
+          <NavLink to="/start-page"> 
             <Button
               _hover={{ color: "blue" }}
               background={"none"}
