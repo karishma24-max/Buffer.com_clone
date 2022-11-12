@@ -23,7 +23,7 @@ const Text1 = ({id , name , inittext}) => {
 
   return (
     <Box width="400px" margin="auto" marginTop="10px">
-      <Button onClick={onToggle} bg="white" width="380px" justifyContent='left' p={7}> 
+      <Button onClick={onToggle} bg="white" width="380px" justifyContent='left' p={7} border="1px solid #bfc5c6"> 
       <Image
             boxSize="32px"
             objectFit="cover"
@@ -35,7 +35,7 @@ const Text1 = ({id , name , inittext}) => {
       </Button>
       <Collapse in={isOpen} animateOpacity>
         <Box
-          bg="#f5f5f5"
+          bg="white"
           mt="4"
           rounded="md"
           shadow="md"
@@ -43,6 +43,7 @@ const Text1 = ({id , name , inittext}) => {
           flexDirection="column"
           gap="2rem"
           width="400px"
+          border="1px solid #878787"
         >
           <Box
             height="auto"
@@ -50,6 +51,7 @@ const Text1 = ({id , name , inittext}) => {
             flexDirection="column"
             gap="1rem"
             bg="white"
+            marginLeft='20px'
           >
             <label>Text</label>
             <Input name={name}  onChange={handelInput} placeholder="Enter description" />
