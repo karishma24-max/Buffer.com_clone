@@ -19,6 +19,7 @@ import {
 
 import Template1 from "../Templates/Template1";
 import Editing from './Editing-Page/Edititng.'
+import UserNavbar from './UserNavbar'
 
 function AllRoutes() {
   return (
