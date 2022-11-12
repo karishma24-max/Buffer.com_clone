@@ -29,6 +29,7 @@ const Template1 = ({data}) => {
       </Box>
       {/* padding="35px 170px 35px 170px" */}
       <Box>
+        <a target={"_blank"} href={data.button1link}>
         <Button
           colorScheme={'yellow'}
           width={'380px'}
@@ -36,6 +37,7 @@ const Template1 = ({data}) => {
         >
           {data.button1content}
         </Button>
+        </a>
       </Box>
       <Box className="description1">
         <Text>
