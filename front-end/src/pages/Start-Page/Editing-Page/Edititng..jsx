@@ -40,7 +40,9 @@ export default function Editing() {
         right="0"
         boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px"}
       >
-        <EditingPage />
+        <Box h="60%" overflowY='auto'>
+          <EditingPage />
+        </Box>
       </Box>
     </Box>
   );
@@ -48,21 +50,21 @@ export default function Editing() {
 
 
     
-    return (
-        <>
-        <UserNavbar />
-        <Box display={'flex'} flexDir='row'>
-            <Box boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'} borderRadius={"10px"} pr='5' pos='fixed' left={0} h='100%'>
-                <Text>Publish Data Change</Text>
-            </Box> 
-            <Box mt='2rem' ml={'20rem'} >
-                <Templates />
-            </Box>
-            <Box  paddinX='2' pl='5'  h='100%' pos={"fixed"}  right='0'>
-                <EditingPage />
-            </Box>
-        </Box>
-        </>
-    )
-}
+    // return (
+    //     <>
+    //     <UserNavbar />
+    //     <Box display={'flex'} flexDir='row'>
+    //         <Box boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'} borderRadius={"10px"} pr='5' pos='fixed' left={0} h='100%'>
+    //             <Text>Publish Data Change</Text>
+    //         </Box> 
+    //         <Box mt='2rem' ml={'20rem'} >
+    //             <Templates />
+    //         </Box>
+    //         <Box  paddinX='2' pl='5'  h='100%' pos={"fixed"}  right='0'>
+    //             <EditingPage />
+    //         </Box>
+    //     </Box>
+    //     </>
+    // )
+
 
