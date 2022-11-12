@@ -1,5 +1,4 @@
 const express = require("express");
-const { updateOne, findOneAndUpdate } = require("./template.model");
 const server = express();
 const Template = require("./template.model");
 
