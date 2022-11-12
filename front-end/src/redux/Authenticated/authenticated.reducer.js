@@ -50,7 +50,14 @@ export const Authreducer = (state = initalState , {type , payload}) => {
             localStorage.removeItem("token")
             localStorage.removeItem("user")
             
-            return initalState
+            return {
+                ...state,
+                data : {
+                    token : "",
+                    isAuth : false,
+                    user : ""
+                },
+            }
         }
 
         default : {
