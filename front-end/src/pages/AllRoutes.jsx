@@ -18,6 +18,7 @@ import {
 
 import Template1 from "../Templates/Template1";
 import Editing from './Editing-Page/Edititng.'
+import User from '../components/User';
 
 
 function AllRoutes() {
@@ -32,6 +33,7 @@ function AllRoutes() {
       <Route path="/pricingdemo" element={<Pricing />} />
       <Route path="/blogdemo" element={<Blog />} />
       <Route path="/about" element={<About />} />
+      <Route path="/user" element={<User />} />
       <Route path="/customersdemo" element={<Customers />} />
       <Route path="/start-page" element={<MainPage_Template />} />
       {template_arr.map((i) => {
