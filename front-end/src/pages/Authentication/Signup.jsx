@@ -39,50 +39,58 @@ const Signup = () =>{
     const HandleSubmit = (set) =>{
        
         if(data.name===""){
-            alert("Please enter the valid name")
+            toast({
+                title: 'Enter the name',
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+              })
             setnameinput("innpput")
         }
         else if(data.name.length < 4){
-            alert("Name Should be at least 5 Characters")
+            toast({
+                title: 'Name minimum 4 Characters',
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+              })
             setnameinput("innpput")
         }
         else if(data.email===''){
-            alert("Please enter the email")
+            toast({
+                title: 'Enter Email',
+                status: 'warning',
+                duration: 2000,
+                isClosable: true,
+              })
             
         }
         else if(data.email[data.email.length-10] !== "@"){
             toast({
                 title: 'Invalid Email',
                 status: 'error',
-                duration: 9000,
+                duration: 2000,
                 isClosable: true,
               })
         }
         else if(data.password.length<5){
-            if(data.password.length===""){
-                alert("please enter valid password")
-            }else{
-                alert("please enter minimum 5 letters password")
-            }
+            toast({
+                title: 'Password Should be 5 Characters',
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+              })
                 
         }else if(!captcha){
-            alert("Please Complete The Captcha")
+            toast({
+                title: 'Complete The Captcha',
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+              })
         }
         else{
-            // try{
-            //     axios.post("http://localhost:8080/user/signup",data)
-            // // console.log("done");-
-            // // setData(init)
-            // .then(()=>{
-            //     console.log("done")
-            //     alert("Success")
-            //     navigate("./start-page")
-            // })
-            // }catch(err){
-            //     console.log(err)
-            //     alert(err.response.data)
-            // https://bluelock.cyclic.app/user/signup
-            // }
+            
             setStateO("Loading...")
             axios.post('https://bluelock.cyclic.app/user/signup', {
             name: data.name,
@@ -93,12 +101,23 @@ const Signup = () =>{
                 console.log(response.data);
                 console.log(`New user Created on ${response.data.user.createdAt}..user id:${response.data.user._id}`)
                 setStateO("Sign Up")
-                alert("Sign in SuccessFull")
+                toast({
+                    title: 'Sugn in Succesfull',
+                    description:"Welcome To Buffer",
+                    status: 'success',
+                    duration: 2000,
+                    isClosable: true,
+                  })
                 navigate("/publish")
                
             }, (error) => {
                if(error.response.data){
-                alert(error.response.data)
+                toast({
+                    title: error.response.data,
+                    status: 'error',
+                    duration: 2000,
+                    isClosable: true,
+                  })
                 setStateO("Sign Up")
                 if(error.response.data === 'we can"t able to create email alreay in use'){
                     setExistemail(true)
@@ -125,14 +144,6 @@ const Signup = () =>{
         
     }
 
-    // const tryinfg = ()=>{
-    //     axios.post('http://localhost:8080/user/signup', article)
-    //     .then(response => element.innerHTML = response.data.id )
-    //     .catch(error => {
-    //     element.parentElement.innerHTML = `Error: ${error.message}`;
-    //     console.error('There was an error!', error);
-    // });
-    // }
 
      return (
         <div className="Container">
@@ -182,7 +193,15 @@ const Signup = () =>{
                     </div>
                     </div>
                     <div>
-                        <button onClick={()=>alert("Cirrently this future is not awailable")} className="freetrailbtn">Start Free Trail</button>
+                        <button onClick={()=> toast({
+                                                    title: 'Currently this future not awaialable',
+                                                    status: 'error',
+                                                    duration: 2000,
+                                                    isClosable: true,
+                                                })} 
+                                                className="freetrailbtn">
+                                                    Start Free Trail 
+                                                    </button>
                     </div>
                 </div>
 
