@@ -93,7 +93,7 @@
     margin-top: 20px;
     height: 100px;
     display: flex;
-    gap: 40px;
+    gap: 80px;
     margin-left: 135px;
     width: 60%;
 }
@@ -114,6 +114,7 @@
     font-weight: bold;
     color: #3D3D3D;
     margin-left: 2px;
+    margin-top: 10px;
     
 }
 .freetrailbtn{
@@ -216,7 +217,7 @@
     }
     .freetrailbtn{
         margin-left: 15px;
-        margin-top: 0px;
+        margin-top: 5px;
     }
     .freetrailbtn2{
         margin-left: 15px;

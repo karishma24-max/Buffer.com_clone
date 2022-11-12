@@ -25,7 +25,37 @@ const Signin = ()=>{
         setdata({...data,[name]:value})
     }
     const handelSubmit = () => {
-        dispatch(login(data))
+        if(error){
+            let msg = error;
+            if(error === "Password is not exist"){
+                msg = "Wrong Password"
+            }
+            toast({
+                title: msg,
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+              });
+        }
+        if(data.email === ""){
+            toast({
+                title: 'Invalid email',
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+              });
+        }else if(data.password === ""){
+            toast({
+                title: 'Invalid Password',
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+              });
+        }
+        else{
+            dispatch(login(data))
+        }
+       
     }
 
     
@@ -35,7 +65,7 @@ const Signin = ()=>{
             title: 'Sign in SuccessFull.',
             description: "Welcome Back To Buffer.",
             status: 'success',
-            duration: 9000,
+            duration: 3000,
             isClosable: true,
           });
         return <Navigate to={"/publish"} />
