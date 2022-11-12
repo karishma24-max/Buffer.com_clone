@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import {useDispatch} from "react-redux";
+import { logout } from "../redux/Authenticated/authenticated.action";
 import {Box, Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useDisclosure} from "@chakra-ui/react";
 import UserNavbar from './UserNavbar';
 function User() {
+  let dispatch = useDispatch();
     const { isOpen, onOpen, onClose } = useDisclosure()
     let user = JSON.parse(localStorage.getItem("user")) || {
         email: "BlueLock",
@@ -29,7 +32,7 @@ function User() {
             <Button variant='ghost' colorScheme='blue' mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button onClick={""} color={"red"} variant='ghost'>Logout</Button>
+            <Button onClick={()=>dispatch(logout())} color={"red"} variant='ghost'>Logout</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
