@@ -4,8 +4,6 @@ import { Navigate, useNavigate } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux"
 import { login } from "../../redux/Authenticated/authenticated.action";
 
-// import { CLoadingButton } from '@coreui/react-pro'
-
 
 const init = {
     email:"",
@@ -19,7 +17,6 @@ const Signin = ()=>{
     const {isAuth} = useSelector((store) => store.auth.data)
     const {loading , error} = useSelector((store) => store.auth)
 
-
     const handleChange = (e) =>{
         const {value, name} = e.target
         setdata({...data,[name]:value})
@@ -31,12 +28,9 @@ const Signin = ()=>{
 
     if(isAuth) {
         return <Navigate to={"/publish"} />
-    }
 
+    }
     
-  
-    
-   
     return (
         <div id="Container">
            
@@ -62,8 +56,6 @@ const Signin = ()=>{
                         <div>
                             <button id="loginbtn" onClick={handelSubmit}>{loading ? "signinng" : 'LOGIN'}</button>
                             { <h1>{error}</h1>}
-      
-                            
                         </div> 
 
                         <div id="cafp">
