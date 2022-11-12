@@ -9,7 +9,6 @@ server.get("/", async (req, res) => {
 });
 
 
-
 server.get("/:id", async (req, res) => {
   const { id } = req.params;
   
@@ -24,6 +23,8 @@ server.get("/:id", async (req, res) => {
 
 server.patch("/:id" , async (req , res) => {
     let  id  = req.params.id;
+
+  
 
     try {
 
