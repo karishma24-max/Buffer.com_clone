@@ -41,11 +41,12 @@ export default function Editing() {
                 </Box>
             </Box>
             <Box
-                paddinX="2"
+                paddingX="2"
                 pl="5"
                 h="100%"
                 bg="#f5f5f5"
                 pos={"fixed"}
+                overflow={'scroll'}
                 right="0"
                 boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px"}
             >
