@@ -25,6 +25,10 @@
     width: 100px;
     margin-left: 3%;
 }
+#errormsg{
+    color: red;
+    margin: 5px;
+}
 #LOGIN{
     font-style: normal;
     font-weight: bold;

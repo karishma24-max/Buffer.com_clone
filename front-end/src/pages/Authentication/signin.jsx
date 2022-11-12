@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./signin.css"
-// import BLSignin from "./images/BLSignin.png"
-import axios from "axios"
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux"
+import { login } from "../../redux/Authenticated/authenticated.action";
 
-import { CLoadingButton } from '@coreui/react-pro'
-
+import { useToast } from '@chakra-ui/react'
 
 const init = {
     email:"",
@@ -13,66 +12,43 @@ const init = {
 }
 
 
-
 const Signin = ()=>{
-    const [stateO, setStateO] = useState("LOGIN")
-
+    const toast = useToast()
     let navigate = useNavigate();
-    const[data , setdata] = useState({});
-
-    const[state, setstate] = useState(false);
-
-    const[error , seterror] = useState("")
-
-    
+    const[data , setdata] = useState(init);
+    const dispatch = useDispatch()
+    const {isAuth} = useSelector((store) => store.auth.data)
+    const {loading , error} = useSelector((store) => store.auth)
 
     const handleChange = (e) =>{
         const {value, name} = e.target
         setdata({...data,[name]:value})
-        // console.log(data);
     }
-  
-   
-    // https://bluelock.cyclic.app/user/signin
-    const handleSubmit = (set) =>{
-        set("Loading....")
-        if(data.email === ""){
-            alert("Please Enter Valid email")
-        }else if(data.password === ""){
-            alert("Please Enter Valid Password")
-        } else {
-        axios.post(`${process.env.REACT_APP_URL_POST_SIGNIN}`,{
-            email: data.email,
-            password: data.password
-          })
-          .then(function (response) {
-            console.log(response.data.token);
-            set("LOGIN")
-            console.log(response.data)
-            localStorage.setItem("user",JSON.stringify(response.data));
-            alert("Login Success")
-            navigate("/publish")
-          })
-          .catch(function (error) {
-            console.log(error.message);
-            alert(error.message)
-            set("LOGIN")
+    const handelSubmit = () => {
+        dispatch(login(data))
+    }
+
+    
+
+    if(isAuth) {
+        toast({
+            title: 'Sign in SuccessFull.',
+            description: "Welcome Back To Buffer.",
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
           });
-        }
-        
+        return <Navigate to={"/publish"} />
     }
     
-   
-   
+    
     return (
         <div id="Container">
-           
             <div id="div1">
                 <div id="bufferimgdiv">
                     <img id="bufferimg" src="https://static.buffer.com/login/public/img/buffer-logo.svg" alt="" />
                 </div>
 
-            
                 <div id="formdiv">
 
                         <h1 id="LOGIN">Log in</h1>
@@ -87,16 +63,12 @@ const Signin = ()=>{
                         </div>
 
                         <div>
-                            <button id="loginbtn" onClick={()=>handleSubmit(setStateO)} >{stateO}</button>
-                            {error && <h1>{error}</h1>}
-                            {/* onClick={()=>handleSubmit(seterror)} */}
-                            {/* <CLoadingButton id="loginbtn" variant="outline" loading={stateO} onClick={() => setStateO(!stateO)}>LOGIN</CLoadingButton> */}
-      
-                            
+                            <button id="loginbtn" onClick={handelSubmit}>{loading ? "signinng" : 'LOGIN'}</button>
+                            { <h1 id="errormsg">{error}</h1>}
                         </div> 
 
                         <div id="cafp">
-                            <button onClick={()=>navigate("/signup")} id="CRA">Creat an account</button>
+                            <button onClick={()=>navigate("/signup")} id="CRA">Create an account</button>
                             <button id="FRP">Forgot Password</button>
                         </div>     
                         
