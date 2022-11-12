@@ -5,29 +5,29 @@ import {useDispatch} from "react-redux"
 
 export const template_arr = [
     {
-    id : "636e69afc9e9d35240b19385",
+    id : "636f9741b7cd3418c565192e",
     template: "https://buffer-start-page.s3.amazonaws.com/presets/Default_X2.png",
     title : "Traveler",
-    path : "636e69afc9e9d35240b19385",
+    path : "636f9741b7cd3418c565192e",
     
     },
     {
-    id : "636e69afc9e9d35240b19386",
+    id : "636f9741b7cd3418c565192f",
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Flower_X2.png",
     title : "Flowers Shop",
-    path : "636e69afc9e9d35240b19386",
+    path : "636f9741b7cd3418c565192f",
     },
     {
-    id : "636e69afc9e9d35240b19387",
+    id : "636f9741b7cd3418c5651930",
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Pizza_X2.png",
     title : "Pizza",
-    path : "636e69afc9e9d35240b19387"
+    path : "636f9741b7cd3418c5651930"
     },
     {
-    id : "636e69afc9e9d35240b19388",
+    id : "636f9741b7cd3418c5651931",
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Alexoo_X2.png",
     title : "Alexo",
-    path : "636e69afc9e9d35240b19388"
+    path : "636f9741b7cd3418c5651931"
     }
 ]
 

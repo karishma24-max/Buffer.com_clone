@@ -15,9 +15,8 @@ import {
   MainPage_Template,
   template_arr,
 } from "./Start-Page/Main-Page-template/Main-Page-template";
+import Editing from './Start-Page/Editing-Page/Edititng.'
 
-import Template1 from "../Templates/Template1";
-import Editing from './Editing-Page/Edititng.'
 
 
 function AllRoutes() {

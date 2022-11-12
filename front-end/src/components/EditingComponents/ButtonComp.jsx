@@ -56,7 +56,7 @@ const ButtonComp = ({id , name, inittext}) => {
             <label>Label</label>
             <Input name={name.buttonContent}  placeholder="Button name" onChange={handelInput} />
             <label>Link</label>
-            <Input name={name.buttonLink} placeholder="A link to anything →" />
+            <Input onChange={handelInput} name={name.buttonLink} placeholder="A link to anything →" />
           </Box>
         </Box>
       </Collapse>

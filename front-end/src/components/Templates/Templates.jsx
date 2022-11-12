@@ -13,18 +13,15 @@ export const Templates = () => {
     const { id } = useParams()
 
 
-    if (id === "636e69afc9e9d35240b19385") {
+    if (id === "636f9741b7cd3418c565192e") {
         return <Template1 data={data} />
-    } else if (id === "636e69afc9e9d35240b19386") {
+    } else if (id === "636f9741b7cd3418c565192f") {
         return <Template2 data={data}/>
 
-    } else if (id === "636e69afc9e9d35240b19387") {
+    } else if (id === "636f9741b7cd3418c5651930") {
         return <Template3  data={data}/>
     } else {
         return <Template4 data={data}/>
     }
 
-    //id1 = 636df8ea89fa2c93fa685748
-    //id2 = 636df8ea89fa2c93fa685749
-    //id3 = 636df8ea89fa2c93fa68574a
 }
