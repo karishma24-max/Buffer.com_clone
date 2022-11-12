@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { Box } from "@chakra-ui/react";
 import "./signup.css"
 import axios from "axios";
 import {  useNavigate } from "react-router-dom";
 // import blueLackSignimg from "../../../public/assets/blueLackSignimg"
 import ReCAPTCHA from "react-google-recaptcha";
-import { ClassNames } from "@emotion/react";
 import { useToast } from '@chakra-ui/react'
 
 const init = {
@@ -40,7 +38,8 @@ const Signup = () =>{
        
         if(data.name===""){
             toast({
-                title: 'Enter the name',
+                title: 'Enter the your valid name',
+                position : "top",
                 status: 'error',
                 duration: 2000,
                 isClosable: true,
@@ -50,6 +49,7 @@ const Signup = () =>{
         else if(data.name.length < 4){
             toast({
                 title: 'Name minimum 4 Characters',
+                position : "top",
                 status: 'error',
                 duration: 2000,
                 isClosable: true,
@@ -58,7 +58,8 @@ const Signup = () =>{
         }
         else if(data.email===''){
             toast({
-                title: 'Enter Email',
+                title: 'Enter Valid Email Address',
+                position : "top",
                 status: 'warning',
                 duration: 2000,
                 isClosable: true,
@@ -67,8 +68,9 @@ const Signup = () =>{
         }
         else if(data.email[data.email.length-10] !== "@"){
             toast({
-                title: 'Invalid Email',
-                status: 'error',
+                title: 'Enter Valid Email Address',
+                position : "top",
+                status: 'warning',
                 duration: 2000,
                 isClosable: true,
               })
@@ -76,6 +78,7 @@ const Signup = () =>{
         else if(data.password.length<5){
             toast({
                 title: 'Password Should be 5 Characters',
+                position : "top",
                 status: 'error',
                 duration: 2000,
                 isClosable: true,
@@ -84,6 +87,7 @@ const Signup = () =>{
         }else if(!captcha){
             toast({
                 title: 'Complete The Captcha',
+                position : "top",
                 status: 'error',
                 duration: 2000,
                 isClosable: true,
@@ -92,7 +96,7 @@ const Signup = () =>{
         else{
             
             setStateO("Loading...")
-            axios.post('https://bluelock.cyclic.app/user/signup', {
+            axios.post(process.env.REACT_APP_USER_SIGNUP_URL , {
             name: data.name,
             email: data.email,
             password:data.password
@@ -102,7 +106,7 @@ const Signup = () =>{
                 console.log(`New user Created on ${response.data.user.createdAt}..user id:${response.data.user._id}`)
                 setStateO("Sign Up")
                 toast({
-                    title: 'Sugn in Succesfull',
+                    title: 'Sign in Succesfully',
                     description:"Welcome To Buffer",
                     status: 'success',
                     duration: 2000,

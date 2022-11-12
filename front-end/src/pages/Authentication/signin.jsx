@@ -24,30 +24,33 @@ const Signin = ()=>{
         const {value, name} = e.target
         setdata({...data,[name]:value})
     }
+
+    if(error) {
+        toast({
+            title: 'Wrong username or password.',
+            position : "top",
+            status: 'error',
+            duration: 2000,
+            isClosable: true,
+          });
+    }
+
+  
     const handelSubmit = () => {
-        if(error){
-            let msg = error;
-            if(error === "Password is not exist"){
-                msg = "Wrong Password"
-            }
-            toast({
-                title: msg,
-                status: 'error',
-                duration: 2000,
-                isClosable: true,
-              });
-        }
+        
         if(data.email === ""){
             toast({
-                title: 'Invalid email',
+                title: 'Please Enter a Valid Email Address',
+                position : "top",
                 status: 'error',
                 duration: 2000,
                 isClosable: true,
               });
         }else if(data.password === ""){
             toast({
-                title: 'Invalid Password',
+                title: 'Please Enter a Valid Password',
                 status: 'error',
+                position : "top",
                 duration: 2000,
                 isClosable: true,
               });
@@ -62,8 +65,9 @@ const Signin = ()=>{
 
     if(isAuth) {
         toast({
-            title: 'Sign in SuccessFull.',
-            description: "Welcome Back To Buffer.",
+            title: 'Sign in SuccessFully.',
+            description: "Welcome Back To Bluelock.",
+            position : "top",
             status: 'success',
             duration: 3000,
             isClosable: true,

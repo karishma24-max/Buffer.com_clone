@@ -9,7 +9,7 @@ const initalState = {
         isAuth : !!token,
         user : ""
     },
-    error : ""
+    error : false
 }
 
 export const Authreducer = (state = initalState , {type , payload}) => {
@@ -21,6 +21,7 @@ export const Authreducer = (state = initalState , {type , payload}) => {
             return {
                 ...state ,
                 loading : true,
+                error : false
             }
         }
 
@@ -34,7 +35,8 @@ export const Authreducer = (state = initalState , {type , payload}) => {
                     token : payload.token,
                     isAuth : true,
                     user : payload.user
-                }
+                },
+                error : false
                 
             }
         }
@@ -43,7 +45,7 @@ export const Authreducer = (state = initalState , {type , payload}) => {
             return {
                 ...state,
                 loading : false,
-                error : payload
+                error : true
             }
         }
         case SIGNOUT_SUCCESS : {

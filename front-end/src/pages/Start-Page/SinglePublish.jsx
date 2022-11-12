@@ -18,12 +18,12 @@ export default function SinglePublish() {
         dispatch(getTemplate(id))
     },[id])
 
-    if (id === "636f9741b7cd3418c565192e") {
+    if (id === "636fde4cf6a43916e145eafb") {
         return <Template1 data={data} />
-    } else if (id === "636f9741b7cd3418c565192f") {
+    } else if (id === "636fde4cf6a43916e145eafc") {
         return <Template2 data={data} />
 
-    } else if (id === "636f9741b7cd3418c5651930") {
+    } else if (id === "636fde4cf6a43916e145eafd") {
         return <Template3 data={data} />
     } else {
         return <Template4 data={data} />

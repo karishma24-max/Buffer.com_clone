@@ -12,6 +12,8 @@ import {
   MenuList,
   MenuItem,
   Text,
+  Toast,
+  useToast,
 } from "@chakra-ui/react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AiOutlineTeam } from "react-icons/ai";
@@ -19,9 +21,22 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import { useDispatch } from "react-redux";
 import { logout } from "../redux/Authenticated/authenticated.action";
 function UserNavbar() {
-  
   let data = JSON.parse(localStorage.getItem("user"))
   const dispatch = useDispatch()
+  const toast = useToast()
+
+  const handelLogout = () => {
+    
+    toast({
+      title: 'Logout Succesfully',
+      position : "top",
+      status: 'error',
+      duration: 2000,
+      isClosable: true,
+    })
+      dispatch(logout())
+
+  }
   
   
 
@@ -214,7 +229,7 @@ function UserNavbar() {
                   background={"none"}
                   _hover={"none"}
                   color="red"
-                  onClick={()=>dispatch(logout())}  // pass the dispatch function to remove the user data in redux as well as Localstorage
+                  onClick={handelLogout}  // pass the dispatch function to remove the user data in redux as well as Localstorage
                 >
                   Logout
                 </Button>
