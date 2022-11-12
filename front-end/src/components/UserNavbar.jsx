@@ -19,14 +19,10 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import { useDispatch } from "react-redux";
 import { logout } from "../redux/Authenticated/authenticated.action";
 function UserNavbar() {
-  
   let data = JSON.parse(localStorage.getItem("user"))
   const dispatch = useDispatch()
-  
-  
-
   return (
-    <Box backgroundColor={"#FFFFFF"} fontFamily={"sans-serif"}>
+    <Box backgroundColor={"#FFFFFF"} m="10px 0" fontFamily={"sans-serif"}>
       <Flex h="70px" w="95%" m="auto">
         <Box display={"Flex"}>
          {/*  //add the navigation to publishing Link */}
@@ -205,11 +201,10 @@ function UserNavbar() {
               </Box>
             </MenuButton>
             <MenuList>
-              <Link to="/userdetails"><MenuItem>Account</MenuItem></Link>
+              <NavLink to="/user"><MenuItem>Account</MenuItem></NavLink>
               <MenuItem>My preferences</MenuItem>
               <MenuItem>Channels</MenuItem>
-              <MenuItem>Team</MenuItem>
-              <MenuItem>
+     <MenuItem>
                 <Button
                   background={"none"}
                   _hover={"none"}
@@ -219,6 +214,7 @@ function UserNavbar() {
                   Logout
                 </Button>
               </MenuItem>
+
             </MenuList>
           </Menu>
         </HStack>
