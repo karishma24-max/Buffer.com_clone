@@ -13,14 +13,20 @@ import {
   MenuItem,
   Text,
 } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AiOutlineTeam } from "react-icons/ai";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/Authenticated/authenticated.action";
 function UserNavbar() {
-  let data = JSON.parse(localStorage.getItem("user")) || {
-    user: { email: "BlueLock" },
-  };
-  console.log(data);
+  
+  let data = JSON.parse(localStorage.getItem("user"))
+  const dispatch = useDispatch()
+  const Navigate = useNavigate()
+
+  
+  
+
   return (
     <Box backgroundColor={"#FFFFFF"} fontFamily={"sans-serif"}>
       <Flex h="70px" w="95%" m="auto">
@@ -196,7 +202,7 @@ function UserNavbar() {
               rightIcon={<ChevronDownIcon />}
             >
               <Box display={"Flex"} alignItems="center">
-                <Text> {data.user.email}</Text>{" "}
+                <Text>{data.email}</Text>{" "}
                 <Image src="https://i.ibb.co/VL94j8H/user.png" alt="user" />
               </Box>
             </MenuButton>
@@ -210,7 +216,7 @@ function UserNavbar() {
                   background={"none"}
                   _hover={"none"}
                   color="red"
-                  onClick={""}  // pass the dispatch function to remove the user data in redux as well as Localstorage
+                  onClick={()=>dispatch(logout())}  // pass the dispatch function to remove the user data in redux as well as Localstorage
                 >
                   Logout
                 </Button>
