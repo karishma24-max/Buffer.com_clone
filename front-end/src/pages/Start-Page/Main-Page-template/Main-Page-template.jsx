@@ -2,6 +2,7 @@ import { Box, Divider, Grid, GridItem, Heading, Text, Image } from "@chakra-ui/r
 import { useNavigate } from "react-router-dom"
 import { getId, getTemplate, updateTemplate} from "../../../redux/Template/template.action"
 import {useDispatch} from "react-redux"
+import UserNavbar from "../../../components/UserNavbar"
 
 export const template_arr = [
     {
@@ -47,6 +48,7 @@ export const MainPage_Template = () => {
 
     return (
         <div>
+            <UserNavbar />
             <div>
                 <Heading md='md' my='1%' textAlign='center' fontFamily={'Montserrat'}>
                     Choose a starting template!
