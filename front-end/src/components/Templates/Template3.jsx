@@ -1,8 +1,8 @@
 import { Box, Button, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
-import Styles from "./Template4.css";
+import Styles from "./Template3.css";
 // hashim you can send the props to this components from start page input elements
-const Template4 = ({data}) => {
+const Template3 = ({data}) => {
   // hashim you can send the props to this components from start page input elements
   return (
     <Box className="main">
@@ -25,26 +25,19 @@ const Template4 = ({data}) => {
       </Box>
       {/* padding="35px 170px 35px 170px" */}
       <Box>
+      <a target={"_blank"} href={data.button1link}>
         <Button
-          colorScheme="purple"
+          colorScheme="orange"
           width="380px"
           padding="35px 50px 35px 50px"
         >
           {data.button1content}
         </Button>
-      </Box>
-      <Box>
-        <Button
-          colorScheme="purple"
-          width="380px"
-          padding="35px 50px 35px 50px"
-        >
-          {data.button2content}
-        </Button>
+        </a>
       </Box>
       <Box className="description1">
         <Text>
-          {data.description2content}
+          {data.descriptioncontent}
         </Text>
       </Box>
       <Box width="380px" margin="auto">
@@ -55,22 +48,46 @@ const Template4 = ({data}) => {
         />
       </Box>
       <Box>
+      <a target={"_blank"} href={data.button2link}>
         <Button
-          colorScheme="purple"
+          colorScheme="orange"
           width="380px"
           padding="35px 50px 35px 50px"
         >
-          {data.button3content}
+          {data.button2content}
         </Button>
+        </a>
       </Box>
-      <Box>
-        <Button
-          colorScheme="purple"
-          width="380px"
-          padding="35px 50px 35px 50px"
-        >
-          {data.button4content}
-        </Button>
+      <Box
+        width="380px"
+        margin="auto"
+        backgroundColor="#f5f5f5"
+        borderRadius="10px"
+      >
+        <Image
+          src={data.image3src}
+          alt="mid"
+          borderRadius="10px"
+        />
+        <Text>{data.text3content}</Text>
+      </Box>
+      <Box className="description1">
+        <Text>
+          {data.description2content}
+        </Text>
+      </Box>
+      <Box
+        width="380px"
+        margin="auto"
+        backgroundColor="#f5f5f5"
+        borderRadius="10px"
+      >
+        <Image
+          src={data.image4src}
+          alt="mid"
+          borderRadius="10px"
+        />
+        <Text>{data.text4content}</Text>
       </Box>
       <div className="video-responsive">
         <iframe
@@ -87,4 +104,4 @@ const Template4 = ({data}) => {
   );
 };
 
-export default Template4;
+export default Template3;

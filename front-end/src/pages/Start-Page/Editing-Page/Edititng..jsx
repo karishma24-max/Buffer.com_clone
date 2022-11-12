@@ -1,10 +1,7 @@
 
-import { Box, EditableInput, Text } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
-import Template1 from "../../Templates/Template1";
-import { Templates } from "../../Templates/Templates";
-import EditingPage from "../EditingPage/EditingPage";
-import DrawerComponents from "../Start-Page/Drawer-Components/DrawerComponents";
+import { Box, Text } from "@chakra-ui/react";
+import { Templates } from "../../../components/Templates/Templates";
+import EditingPage from "../../../components/EditingComponents/EditingPage";
 
 
 export default function Editing() {
