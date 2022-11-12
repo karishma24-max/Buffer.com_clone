@@ -6,29 +6,29 @@ import UserNavbar from "../../../components/UserNavbar"
 
 export const template_arr = [
     {
-    id : "636f9741b7cd3418c565192e",
+    id : "636fde4cf6a43916e145eafb",
     template: "https://buffer-start-page.s3.amazonaws.com/presets/Default_X2.png",
     title : "Traveler",
-    path : "636f9741b7cd3418c565192e",
+    path : "636fde4cf6a43916e145eafb",
     
     },
     {
-    id : "636f9741b7cd3418c565192f",
+    id : "636fde4cf6a43916e145eafc",
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Flower_X2.png",
     title : "Flowers Shop",
-    path : "636f9741b7cd3418c565192f",
+    path : "636fde4cf6a43916e145eafc",
     },
     {
-    id : "636f9741b7cd3418c5651930",
+    id : "636fde4cf6a43916e145eafd",
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Pizza_X2.png",
     title : "Pizza",
-    path : "636f9741b7cd3418c5651930"
+    path : "636fde4cf6a43916e145eafd"
     },
     {
-    id : "636f9741b7cd3418c5651931",
+    id : "636fe09fc6305def2eb21bf6",
     template : "https://buffer-start-page.s3.amazonaws.com/presets/Alexoo_X2.png",
     title : "Alexo",
-    path : "636f9741b7cd3418c5651931"
+    path : "636fe09fc6305def2eb21bf6"
     }
 ]
 

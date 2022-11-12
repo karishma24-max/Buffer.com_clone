@@ -39,7 +39,7 @@ const EditingPage = () => {
         name={{ buttonContent: "button1content", buttonLink: "button1link" }}
         inittext={{ buttonContent: "", buttonLink: "" }}
       />
-      {id === "636f9741b7cd3418c5651931" ? (
+      {id === "636fe09fc6305def2eb21bf6" ? (
         <ButtonComp
           id={id}
           name={{ buttonContent: "button2content", buttonLink: "button2link" }}
@@ -49,18 +49,18 @@ const EditingPage = () => {
         <></>
       )}
       {/* for checking 2nd template */}
-      {id === "636f9741b7cd3418c565192f" ? <MidImage /> : <></>}
+      {id === "636fde4cf6a43916e145eafc" ? <MidImage /> : <></>}
       <Text1
         id={id}
         name={
-          id === "636f9741b7cd3418c5651931"
+          id === "636fe09fc6305def2eb21bf6"
             ? "description2content"
             : "descriptioncontent"
         }
         inittext={""}
       />
       <MidImage id={id} />
-      {id == "636f9741b7cd3418c5651931" ? (
+      {id == "636fe09fc6305def2eb21bf6" ? (
         <ButtonComp
           id={id}
           name={{ buttonContent: "button3content", buttonLink: "button3link" }}
@@ -69,7 +69,7 @@ const EditingPage = () => {
       ) : (
         <></>
       )}
-      {id == "636f9741b7cd3418c5651931" ? (
+      {id == "636fe09fc6305def2eb21bf6" ? (
         <ButtonComp
           id={id}
           name={{ buttonContent: "button4content", buttonLink: "button4link" }}
@@ -78,7 +78,7 @@ const EditingPage = () => {
       ) : (
         <></>
       )}
-      {id == "636f9741b7cd3418c5651930" ? (
+      {id == "636fde4cf6a43916e145eafd" ? (
         <ButtonComp
           id={id}
           name={{ buttonContent: "button2content", buttonLink: "button2link" }}
@@ -87,18 +87,18 @@ const EditingPage = () => {
       ) : (
         <></>
       )}
-      {id == "636f9741b7cd3418c5651930" || "636f9741b7cd3418c565192e" ? (
+      {id == "636fde4cf6a43916e145eafd" || "636fde4cf6a43916e145eafb" ? (
         <Text1 id={id} name={"description2content"} inittext={""} />
       ) : (
         <></>
       )}
-      {id === "636f9741b7cd3418c565192f" ||
-      id === "636f9741b7cd3418c5651930" ? (
+      {id === "636fde4cf6a43916e145eafc" ||
+      id === "636fde4cf6a43916e145eafd" ? (
         <MidImage />
       ) : (
         <></>
       )}
-      {id === "636f9741b7cd3418c565192f" ? (
+      {id === "636fde4cf6a43916e145eafc" ? (
         <ButtonComp
           id={id}
           name={{ buttonContent: "button2content", buttonLink: "button2link" }}
@@ -107,7 +107,7 @@ const EditingPage = () => {
       ) : (
         <></>
       )}
-      {id === "636f9741b7cd3418c5651930" ? <MidImage /> : <></>}
+      {id === "636fde4cf6a43916e145eafd" ? <MidImage /> : <></>}
       <YouTube id={id} name={"iframesrc"} inittext={""} />
       </Box>
     </Box>
