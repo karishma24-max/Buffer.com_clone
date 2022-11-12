@@ -1,6 +1,6 @@
 
 import React from 'react'
-import {Route,Routes} from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import Home from './Home'
 import Publishing from './Publish/Publishing'
 import Signup from "./Authentication/Signup";
@@ -17,6 +17,8 @@ import {
 } from "./Start-Page/Main-Page-template/Main-Page-template";
 import Editing from './Start-Page/Editing-Page/Edititng.'
 import PrivRoutes from '../components/PrivateRoutes';
+import SinglePublish from './Start-Page/SinglePublish';
+import NotFound from './Start-Page/NotFound';
 
 
 
@@ -36,16 +38,18 @@ function AllRoutes() {
       <Route path="/start-page" element={<PrivRoutes><MainPage_Template /></PrivRoutes>} />
       {template_arr.map((i) => {
 
-          return (
-            <Route
-              key={i.path}
-              path={`/start-page/:id`}
-              element={<PrivRoutes><Editing /></PrivRoutes>}
-            />
-          )
+        return (
+          <Route
+            key={i.path}
+            path={`/start-page/:id`}
+            element={<PrivRoutes><Editing /></PrivRoutes>}
+          />
+        )
       })}
+      <Route path='/publish-website/:id' element={<PrivRoutes><SinglePublish /></PrivRoutes>}></Route>
+      <Route path='*' element={<NotFound />}></Route>
     </Routes>
   );
 
 }
-export default AllRoutes;
+export default AllRoutes;
