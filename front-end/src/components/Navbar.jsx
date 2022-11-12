@@ -19,7 +19,7 @@ const Links = [
   { name: "Blog", id: "/blogdemo" },
   { name: "About", id: "/about" },
   { name: "Customers", id: "/customersdemo" },
-  { name: "Login", id: "/logindemo" },
+  { name: "Login", id: "/signin" },
 ];
 
 function Navbar() {

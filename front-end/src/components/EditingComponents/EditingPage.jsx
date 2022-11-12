@@ -21,7 +21,8 @@ const EditingPage = () => {
   }, [id]);
 
   return (
-    <Box w="420px" margin="auto" bg="#f5f5f5">
+    <Box w="420px" margin="auto" bg="#f5f5f5" >
+      <Box>
       <Heading as="h4" size="md" marginTop="10px" display="block">
         Your Site Layout
       </Heading>
@@ -108,6 +109,7 @@ const EditingPage = () => {
       )}
       {id === "636f9741b7cd3418c5651930" ? <MidImage /> : <></>}
       <YouTube id={id} name={"iframesrc"} inittext={""} />
+      </Box>
     </Box>
   );
 };
