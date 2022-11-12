@@ -6,12 +6,15 @@ import {  useNavigate } from "react-router-dom";
 // import blueLackSignimg from "../../../public/assets/blueLackSignimg"
 import ReCAPTCHA from "react-google-recaptcha";
 import { ClassNames } from "@emotion/react";
+import { useToast } from '@chakra-ui/react'
+
 const init = {
     name:"",
     email:"",
     password:""
 }
 const Signup = () =>{
+    const toast = useToast()
     const[stateO, setStateO] = useState("Sign Up")
     let navigate = useNavigate();
     const [disable, setDisable] = useState(false);
@@ -48,7 +51,12 @@ const Signup = () =>{
             
         }
         else if(data.email[data.email.length-10] !== "@"){
-            alert("Invalid Email ")
+            toast({
+                title: 'Invalid Email',
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+              })
         }
         else if(data.password.length<5){
             if(data.password.length===""){

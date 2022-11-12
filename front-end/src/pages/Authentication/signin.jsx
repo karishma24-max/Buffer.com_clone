@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./signin.css"
-// import BLSignin from "./images/BLSignin.png"
-import axios from "axios"
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux"
+import { login } from "../../redux/Authenticated/authenticated.action";
 
-import { CLoadingButton } from '@coreui/react-pro'
+// import { CLoadingButton } from '@coreui/react-pro'
 
 
 const init = {
@@ -12,71 +12,30 @@ const init = {
     password:""
 }
 
-
-
 const Signin = ()=>{
-    const [stateO, setStateO] = useState("LOGIN")
-
     let navigate = useNavigate();
-    const[data , setdata] = useState({});
+    const[data , setdata] = useState(init);
+    const dispatch = useDispatch()
+    const {isAuth} = useSelector((store) => store.auth.data)
+    const {loading , error} = useSelector((store) => store.auth)
 
-    const[state, setstate] = useState(false);
-
-    const[error , seterror] = useState("")
-
-    // const[users , setusers] = useState([]);
 
     const handleChange = (e) =>{
         const {value, name} = e.target
         setdata({...data,[name]:value})
-        // console.log(data);
-    }
-  
-    const handleSubmit = (seterror) =>{
-        console.log(data);
-        axios({
-            method: 'post',
-            url: 'http://localhost:8080/user/signin',
-            data: data
-        })
-        .then((res)=>{
-            console.log(res)
-            // Naviagete to next page ; 
-            alert("..Success");
-            navigate("/publish")
-
-        })
-        .catch( (error) => {
-            console.log(error.message);
-            // alert("Please Enter The Valid Credentioals");
-            seterror(error.message);
-        });
     }
 
-    const fake = (set) =>{
-        set("Loading....")
-        if(data.email === ""){
-            alert("Please Enter Valid email")
-        }else if(data.password === ""){
-            alert("Please Enter Valid Password")
-        }else{
-        axios.post('https://bluelock.cyclic.app/user/signin', {
-           email: data.email,
-            password: data.password
-          })
-          .then(function (response) {
-            console.log(response.data.token);
-            set("LOGIN")
-          })
-          .catch(function (error) {
-            console.log(error.message);
-            alert(error.message)
-            set("LOGIN")
-          });
-        }
+    const handelSubmit = () => {
+      dispatch(login(data))
     }
+
+    if(isAuth) {
+        return <Navigate to={"/publish"} />
+    }
+
     
-   
+  
+    
    
     return (
         <div id="Container">
@@ -101,16 +60,14 @@ const Signin = ()=>{
                         </div>
 
                         <div>
-                            <button id="loginbtn" onClick={()=>fake(setStateO)} >{stateO}</button>
-                            {error && <h1>{error}</h1>}
-                            {/* onClick={()=>handleSubmit(seterror)} */}
-                            {/* <CLoadingButton id="loginbtn" variant="outline" loading={stateO} onClick={() => setStateO(!stateO)}>LOGIN</CLoadingButton> */}
+                            <button id="loginbtn" onClick={handelSubmit}>{loading ? "signinng" : 'LOGIN'}</button>
+                            { <h1>{error}</h1>}
       
                             
                         </div> 
 
                         <div id="cafp">
-                            <button onClick={()=>navigate("/signup")} id="CRA">Creat an account</button>
+                            <button onClick={()=>navigate("/signup")} id="CRA">Create an account</button>
                             <button id="FRP">Forgot Password</button>
                         </div>     
                         
