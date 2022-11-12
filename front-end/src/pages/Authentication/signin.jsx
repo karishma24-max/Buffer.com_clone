@@ -24,7 +24,7 @@ const Signin = ()=>{
 
     const[error , seterror] = useState("")
 
-    // const[users , setusers] = useState([]);
+    
 
     const handleChange = (e) =>{
         const {value, name} = e.target
@@ -32,26 +32,7 @@ const Signin = ()=>{
         // console.log(data);
     }
   
-    // const handleSubmit = (seterror) =>{
-    //     console.log(data);
-    //     axios({
-    //         method: 'post',
-    //         url: 'http://localhost:8080/user/signin',
-    //         data: data
-    //     })
-    //     .then((res)=>{
-    //         console.log(res)
-    //         // Naviagete to next page ; 
-    //         alert("..Success");
-    //         navigate("/publish")
-
-    //     })
-    //     .catch( (error) => {
-    //         console.log(error.message);
-    //         // alert("Please Enter The Valid Credentioals");
-    //         seterror(error.message);
-    //     });
-    // }
+   
     // https://bluelock.cyclic.app/user/signin
     const handleSubmit = (set) =>{
         set("Loading....")
@@ -60,7 +41,7 @@ const Signin = ()=>{
         }else if(data.password === ""){
             alert("Please Enter Valid Password")
         } else {
-        axios.post('https://bluelock.cyclic.app/user/signin', {
+        axios.post(`${process.env.REACT_APP_URL_POST_SIGNIN}`,{
             email: data.email,
             password: data.password
           })
