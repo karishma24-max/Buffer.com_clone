@@ -8,7 +8,7 @@
     border:1px solid;
     margin-top:15px;
     margin-left: 50px;
-    margin-right: 50px;
+    margin-right: 51px;
 }
 
 .calender-title{
@@ -33,6 +33,11 @@
     grid-template-rows: repeat(5,1fr);
     text-align: left;
 }
+
+.schedule{
+    font-size:10px;
+}
+
 .styledate{
     transition: all 0.3s ease ;
     border:1px solid;

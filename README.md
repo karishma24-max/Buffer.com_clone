@@ -6,18 +6,21 @@
   It is one of the best time saving methods in the world of social media marketing. 
   Several international brands are already using it."
 
-# User Authentication api paths
+# User Authentication api's
 
-- POST -Registeration - /user/signup - name,email,password
-- POST -Login - /user/signin - email,password
-- DELETE - /user/delete - email
-- PATCH - /user/edit - email,newemail,newpassword
-- GET - allusers - /user 
+- POST -Registeration - https://bluelock.cyclic.app/user/signup - required fields(name,email,password)
+- POST -Login - https://bluelock.cyclic.app/user/signin - required fields(email,password)
+- DELETE - https://bluelock.cyclic.app/user/delete - required filed -email
+- PATCH - https://bluelock.cyclic.app/user/edit - required fields -(email,newemail,newpassword)
+- GET - allusers - https://bluelock.cyclic.app/user
 
 /* CASE SENSITIVE */
 
-# Template JSON server api
-You have to use --PORT 8080
+# Template api
+- GET Templates - https://bluelock.cyclic.app/template
+- GET Individual Template -  https://bluelock.cyclic.app/template/:id params
 
-- GET http://localhost:8080/Template
-- Individualy http://localhost:8080/Template/{id} --id params
+# calender api's
+
+- GET posts - https://bluelock.cyclic.app/post
+- POST posts - https://bluelock.cyclic.app/post

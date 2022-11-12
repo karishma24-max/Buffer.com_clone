@@ -55,19 +55,22 @@
   transition: 0.5s;
   outline: none;
   margin-top: 2px;
+  
 }
 
 #lable1{
     font-weight: 500;
     font-size: 14px;
     color: #3D3D3D;
-    margin-left: -93%;
+    margin-left:0%;
+  
 }
 .lable2{
     font-weight: 500;
     font-size: 14px;
     color: #3D3D3D;
-    margin-left: -89%;
+    margin-left: 0%;
+   
 }
 .inputdiv{
     margin-top: 3px;
@@ -77,6 +80,7 @@
     height: 49px;
     margin-bottom: 30px;
     margin: auto;
+    margin-top: 30px;
 }
 #catptchdiv{
     /* border: 2px solid red; */
@@ -100,14 +104,16 @@
     margin-left: 2px;
 }
 .unilimited{
-    margin-top:5px;
+    margin-top: -5px;
+    margin-bottom: 5px;
 }
 .unilimited>p{
     text-align: left;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     color: #3D3D3D;
     margin-left: 2px;
+    
 }
 .freetrailbtn{
     background-color: blue;
@@ -143,10 +149,47 @@
     width: 60%;
     justify-content: space-between;
 }
+#exitemail{
+    color:  red;
+    font-size: small;
+    margin-left: 15%;
+    margin-top: 10px;
+  
+}
+#exitemail:hover {
+    cursor:pointer;
+}
+.innpput{
+    width: 83%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(244, 8, 8);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  margin-top: 2px;
+  
+}
+@media only screen and (min-width:16552) and  (max-width: 1655px){
+    #headingline{
+        margin-left:30px ;
+    }
+    #catptchdiv{
+        margin-left: 140px;
+    }
+    .FullPackage{
+        margin-left: 140px;
+    }
+    .lastdivs{
+        margin-left:140px ;
+    }
+}
 
 
 /* 700 Screen ---- Size */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
     .div2 {
       /* background-color: red; */
       width: 0%;
@@ -172,9 +215,11 @@
     }
     .freetrailbtn{
         margin-left: 15px;
+        margin-top: 0px;
     }
     .freetrailbtn2{
         margin-left: 15px;
+        margin-top: 10px;
     }
   }
 
@@ -197,15 +242,17 @@
         display: block;
         height: 170px;
         margin-left: 70px;
+        
     }
     .freetrailbtn{
         width: 90%;
-        height:50px ;
+        height:40px ;
         margin-top: 5px;
+        margin-top: -3px;
     }
     .freetrailbtn2{
         width: 90%;
-        height:50px ;
+        height:40px ;
         margin-top: 8px;
     }
     #headingdiv{
