@@ -38,7 +38,9 @@ export default function Editing() {
         right="0"
         boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px"}
       >
-        <EditingPage />
+        <Box h="60%" overflowY='auto'>
+          <EditingPage />
+        </Box>
       </Box>
     </Box>
   );
