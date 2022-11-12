@@ -22,8 +22,6 @@ function UserNavbar() {
   
   let data = JSON.parse(localStorage.getItem("user"))
   const dispatch = useDispatch()
-  const Navigate = useNavigate()
-
   
   
 
