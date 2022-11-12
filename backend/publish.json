@@ -31,32 +31,18 @@
       "id": 5
     },
     {
-      "img": "C:\\fakepath\\POONAM.JPG",
-      "text": "my favourite post",
-      "date": "2022-11-25",
+      "userdata": {
+        "img": "https://images.unsplash.com/photo-1667719275827-f982acd04b38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8TThqVmJMYlRSd3N8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+        "text": "my favourite post",
+        "date": "17"
+      },
       "id": 6
     },
     {
-      "img": "C:\\fakepath\\POONAM.JPG",
+      "img": "https://images.unsplash.com/photo-1667719275827-f982acd04b38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8TThqVmJMYlRSd3N8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
       "text": "my favourite post",
-      "date": "",
+      "date": "29",
       "id": 7
-    },
-    {
-      "img": "C:\\fakepath\\rajaedit.jpeg",
-      "text": "kiya",
-      "id": 8
-    },
-    {
-      "img": "C:\\fakepath\\WhatsApp Image 2022-10-10 at 8.57.28 PM.jpeg",
-      "text": "kiya",
-      "id": 9
-    },
-    {
-      "img": "",
-      "text": "",
-      "date": "",
-      "id": 10
     }
   ]
 }

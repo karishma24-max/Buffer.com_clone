@@ -92,10 +92,10 @@ const { isOpen, onOpen, onClose } = useDisclosure()
   console.log(current)
   const [userdata,setUserdata]=useState({img:"",text:"",date:""})
   
-  const handledata=(e,day)=>{
+  const handledata=(e)=>{
     const {value, name} = e.target
     
-        setUserdata({...userdata,[name]:value,date:day})
+        setUserdata({...userdata,[name]:value})
 }
 
 const handlesubmit=()=>
@@ -126,7 +126,7 @@ style={{
         }}
 
 
- onClick={onOpen}    ><Box w="50px" h="50px" >{day}{arrdata.map((ele)=><div >{ele.date == day? <Schedule text={ele.text} img={ele.img} id={ele.id} date={ele.date} month={current1} year={current2}/>:""}</div>)}
+ onClick={onOpen}    ><Box w="50px" h="50px" >{day}{arrdata.map((ele)=><div >{ele.date == day? <Schedule text={ele.text} img={ele.img} id={ele.id} date={ele.date} month={current1+1} year={current2}/>:""}</div>)}
   </Box> 
     
   </div></Tooltip>)}</div> 
@@ -138,14 +138,18 @@ style={{
                     <ModalContent bg="white" height="500px">
 
                         <ModalCloseButton color="grey" />
-                        <ModalBody><Box border="2px solid lightgrey" mt={10} ml={10} mr={10} mb={10} height="420px">
-                            <Flex><Box w="120px" color="blue" textAlign={"center"}><Input color="grey" border="2px dotted" mr="20px" mt="50px" type="file" name="img" onChange={handledata} />
-                                <Box ml="35px" mt="40px"> <AiFillFileImage size="50px" color="rgb(91, 87, 87)" />
-                                </Box><Text ml="5px">select your file </Text></Box>
+                        <ModalBody>
+                        <Box border="2px solid lightgrey" mt={10} ml={10} mr={10} mb={10} height="440px">
+                           
 
-                                <Input placeholder="What would you like to share" name="text" onChange={handledata} w="70%" h="300px" />
+              <Flex ><Heading size="30px" mt="20px" ml="10px">Enter your Image</Heading> <Input color="grey" border="2px dotted" w="250px" ml="30px" mt="20px" type="text" name="img" onChange={handledata}  /></Flex> 
+              <Flex><Heading size="30px" mt="20px" ml="10px">Enter your Date</Heading> <Input onChange={handledata} w="250px" name="date" ml="50px" mt="20px"/></Flex>
+                     <Flex><Heading size="30px" mt="60px" ml="10px">Enter Your Text:- </Heading><Input color="" placeholder="What would you like to share"  w="250px" ml="45px" mt="20px"  h="220px" name="text" onChange={handledata} /></Flex>          
+                     <Button ml="140px" bg="cornflowerblue" mt="20px" onClick={handlesubmit}>Submit</Button>      
 
-                            </Flex> </Box> <Button onClick={handlesubmit}>Submit</Button></ModalBody>
+                            
+
+                             </Box> </ModalBody>
                     </ModalContent>
                 </Modal>
             </Box>
