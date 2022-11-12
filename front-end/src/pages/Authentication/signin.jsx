@@ -26,12 +26,8 @@ const Signin = ()=>{
     }
     const handelSubmit = () => {
         if(error){
-            let msg = error;
-            if(error === "Password is not exist"){
-                msg = "Wrong Password"
-            }
             toast({
-                title: msg,
+                title: error,
                 status: 'error',
                 duration: 2000,
                 isClosable: true,
@@ -63,7 +59,7 @@ const Signin = ()=>{
     if(isAuth) {
         toast({
             title: 'Sign in SuccessFull.',
-            description: "Welcome Back To Buffer.",
+            description: "Welcome Back To Bluelock.",
             status: 'success',
             duration: 3000,
             isClosable: true,
