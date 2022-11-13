@@ -82,6 +82,11 @@ const Calender = ({ startingDate, displaydata, userdisplay, setdata, arrdata }) 
     }
 
 
+    const init = {
+        image: "",
+        text: "",
+        date: ""
+    }
 
 
     let x = new Date()
@@ -90,7 +95,7 @@ const Calender = ({ startingDate, displaydata, userdisplay, setdata, arrdata }) 
     const current1 = x.getMonth()
     const current2 = x.getFullYear()
 
-    const [userdata, setUserdata] = useState({ image: "https://media.istockphoto.com/id/862201574/photo/there-is-so-much-fun-to-have-with-social-networking.jpg?b=1&s=170667a&w=0&k=20&c=8KLAHSB5uVzd3Z5PubqK_DOKJEPBtlx8S9tQhVr1w_U=", text: "", date: "" })
+    const [userdata, setUserdata] = useState(init)
 
     const handledata = (e) => {
         const { value, name } = e.target
@@ -99,19 +104,20 @@ const Calender = ({ startingDate, displaydata, userdisplay, setdata, arrdata }) 
     }
 
     const handlesubmit = () => {
-        let response = axios.post(`https://bluelock.cyclic.app/post`, userdata).then(res => console.log(res.data)).catch(e => console.log(e.message))
+        
+        let response = axios.post(process.env.REACT_APP_USER_POST_URL, userdata).then(res => console.log(res.data)).catch(e => console.log(e.message))
         setdata()
         onClose()
-       
+
     }
     return (
         <>
-            <div className="calendersection"><Flex mt="30px">
+            <div style={{ width: "80%" }} className="calendersection"><Flex mt="30px">
                 <img src="C:\fakepath\WhatsApp Image 2022-10-10 at 8.57.28 PM.jpeg" alt="" />
                 <Flex>  <Button ml="50px" color="grey" border="1px solid" size="sm" onClick={prevmonth} bg="white"><ArrowBackIcon size="0px" /></Button><Heading size='md' color="grey" ml="2px">Today</Heading><Button onClick={nextmonth} bg="white" size="sm" color="grey" border="1px solid"  ><ArrowForwardIcon size="50px" fontWeight={"bold"} />
                 </Button> <Heading size='md' ml="10px">{date.toLocaleString('en-US', { month: "long" })}{currentYear}</Heading></Flex>
                 <Spacer />
-                <Box><Button ml={4} bg="white" border="1px solid grey">All posts</Button><Button ml={4} bg="white" border="1px solid grey">All Channels</Button><Button ml={4} c={"blue"} bg={"cornflowerblue"}>Month</Button><Button ml={3} mr="10px" bg={"blue"} onClick={onOpen}>Create Posts</Button></Box></Flex>
+                <Box><Button ml={4} bg="white" border="1px solid grey">All posts</Button><Button ml={4} bg="white" border="1px solid grey">All Channels</Button><Button ml={4} c={"blue"} bg={"cornflowerblue"}>Month</Button><Button ml={3} bg={"blue"} onClick={onOpen}>Create Posts</Button></Box></Flex>
 
 
                 <div className="calender-box">

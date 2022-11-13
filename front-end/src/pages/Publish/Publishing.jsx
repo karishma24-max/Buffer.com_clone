@@ -17,24 +17,22 @@ const Publishing = () => {
 
   }
   const [displaydata, setdisplaydata] = useState(0)
-  const [userdisplay, setUserdisplay] = useState("")
   const setdata = () => {
     getdata().then((response) => {
-      setdisplaydata(response.data.length)
-      setUserdisplay(response.data[displaydata - 1].text)
+      setdisplaydata(response.data.length) 
       setArrdata(response.data)
     })
   }
 
   useEffect(() => {
     setdata()
-  }, [displaydata, userdisplay])
+  }, [displaydata])
 
   return (
     <>
       <UserNavbar />
       <Flex w="100%">
-        <Sidebar displaydata={displaydata} userdisplay={userdisplay} />
+        <Sidebar displaydata={displaydata} />
         <Calender startingDate={new Date()} setdata={setdata} arrdata={arrdata} />
       </Flex>
     </>

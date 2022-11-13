@@ -64,7 +64,7 @@ function UserNavbar() {
             </Button>
           </NavLink>
           {/*  //add the navigation link to publishing */}
-          <NavLink to="">
+          <NavLink to="/publish">
             <Button
               _hover={{ color: "blue" }}
               background={"none"}
