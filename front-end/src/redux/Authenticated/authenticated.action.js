@@ -11,7 +11,7 @@ export const login = (creds) => async (dispatch) => {
         dispatch({type : SIGNIN_SUCCESS , payload : data})
 
     } catch (err) {
-        dispatch({type : SIGNIN_ERROR , payload : err.response.data})
+        dispatch({type : SIGNIN_ERROR })
     }
 }
 

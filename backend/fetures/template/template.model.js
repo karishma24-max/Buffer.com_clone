@@ -14,6 +14,7 @@ const TemplateSchema = new mongoose.Schema(
     text3content : { type: String },
     image4src : { type: String },
     description2content : { type: String },
+    description3content : { type: String },
     text4content: { type: String },
     button2content: { type: String },
     button2link : { type: String },
@@ -21,6 +22,7 @@ const TemplateSchema = new mongoose.Schema(
     button3link : { type: String },
     button4content : { type : String },
     button4link : { type: String },
+    iframesrc : {type : String}
   },
   {
     timestamps: true,

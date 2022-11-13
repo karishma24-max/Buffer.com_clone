@@ -45,7 +45,7 @@ function UserNavbar() {
       <Flex h="70px" w="95%" m="auto">
         <Box display={"Flex"}>
          {/*  //add the navigation to publishing Link */}
-          <NavLink to="">
+          <NavLink to="/publish">
             <Button
               background={"none"}
               color="grey"
@@ -220,7 +220,7 @@ function UserNavbar() {
               </Box>
             </MenuButton>
             <MenuList>
-              <Link to="/userdetails"><MenuItem>Account</MenuItem></Link>
+              <NavLink to="/user"><MenuItem>Account</MenuItem></NavLink>
               <MenuItem>My preferences</MenuItem>
               <MenuItem>Channels</MenuItem>
               <MenuItem>Team</MenuItem>

@@ -1,14 +1,15 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import { logout } from "../redux/Authenticated/authenticated.action";
 import {Box, Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useDisclosure} from "@chakra-ui/react";
 import UserNavbar from './UserNavbar';
+import { logout } from '../redux/Authenticated/authenticated.action';
 function User() {
   let dispatch = useDispatch();
     const { isOpen, onOpen, onClose } = useDisclosure()
-    let user = JSON.parse(localStorage.getItem("user")) || {
-        email: "BlueLock",
-        };
+    let user = JSON.parse(localStorage.getItem("user")) || {name : "user" , email : "useremail" , password : "null"}
+
+    console.log(user)
+
   return (
     <Box>
         <UserNavbar/>
