@@ -5,6 +5,7 @@ import axios from 'axios'
 export const getTemplate = (id) => async (dispatch) => {
     let response = await axios.get(`${process.env.REACT_APP_TEMPLATE_URL}/${id}`)
     let data = await response.data
+    console.log(data)
     dispatch({ type: get_template, payload: data })
 }
 
