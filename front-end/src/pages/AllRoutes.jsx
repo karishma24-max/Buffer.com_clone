@@ -19,8 +19,7 @@ import Editing from './Start-Page/Editing-Page/Edititng.'
 import PrivRoutes from '../components/PrivateRoutes';
 import SinglePublish from './Start-Page/SinglePublish';
 import NotFound from './Start-Page/NotFound';
-import Template1 from "../Templates/Template1";
-import Editing from './Editing-Page/Edititng.'
+
 import User from '../components/User';
 
 

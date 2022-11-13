@@ -12,7 +12,7 @@ const Publishing = () => {
   const [arrdata, setArrdata] = useState([])
 
   const getdata = async () => {
-    let response = await axios.get("http://localhost:8000/data")
+    let response = await axios.get(`${process.env.REACT_APP_URL}/post`)
     return response
 
   }
