@@ -106,8 +106,9 @@ const Signup = () =>{
                 console.log(`New user Created on ${response.data.user.createdAt}..user id:${response.data.user._id}`)
                 setStateO("Sign Up")
                 toast({
-                    title: 'Sign in Succesfully',
-                    description:"Welcome To Buffer",
+                    title: 'Account Created Successfully',
+                    description:"Welcome To Bluelock family",
+                    position : 'top',
                     status: 'success',
                     duration: 2000,
                     isClosable: true,
@@ -154,7 +155,7 @@ const Signup = () =>{
 
 
              <div className="div1">
-                <img id="bufferimg" src="https://static.buffer.com/login/public/img/buffer-logo.svg" alt="" />
+                <img id="bufferimg" width={"20%"} src="https://i.ibb.co/6JkQKCN/Bluelock.png" alt="" />
                 
                 <div id="formdiv">
                 <div id="headingdiv"><h1 id="headingline">Let's get your account set up</h1></div>

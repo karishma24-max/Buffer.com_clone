@@ -1,16 +1,38 @@
-import { Box, Button, HStack, Spacer, Text } from "@chakra-ui/react";
+import { Box, Button, HStack, Spacer, Text, useToast } from "@chakra-ui/react";
 import { Templates } from "../../../components/Templates/Templates";
 import EditingPage from "../../../components/EditingComponents/EditingPage";
 import UserNavbar from "../../../components/UserNavbar";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
+import { useRef } from "react";
 
 export default function Editing() {
     const { id } = useParams()
     const Navigate = useNavigate()
+    const toast = useToast(0)
+    const timerId = useRef()
+    const [count, setCount] = useState(5)
 
     const handelNavigate = () => {
+        timerId.current = setInterval(() => {
+            setCount((prev) => prev - 1)
+        }, 1000)
+
+        toast({
+            title: `Redirecting in Publish Website`,
+            position: "top",
+            status: 'success',
+            duration: 5000,
+            isClosable: true,
+        });
+    }
+
+
+    
+
+    if (count === 0) {
         Navigate(`/publish-website/${id}`)
-        
+        clearTimeout(timerId.current)
     }
 
     return (

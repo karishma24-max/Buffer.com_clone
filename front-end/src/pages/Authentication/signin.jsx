@@ -80,7 +80,7 @@ const Signin = ()=>{
         <div id="Container">
             <div id="div1">
                 <div id="bufferimgdiv">
-                    <img id="bufferimg" src="https://static.buffer.com/login/public/img/buffer-logo.svg" alt="" />
+                    <img id="bufferimg" src="https://i.ibb.co/6JkQKCN/Bluelock.png" alt="" />
                 </div>
 
                 <div id="formdiv">
