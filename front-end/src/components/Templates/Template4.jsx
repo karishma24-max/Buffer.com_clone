@@ -4,6 +4,15 @@ import Styles from "./Template4.css";
 // hashim you can send the props to this components from start page input elements
 const Template4 = ({data}) => {
   // hashim you can send the props to this components from start page input elements
+
+  let res;
+  if(data.iframesrc) {
+    let a = data.iframesrc;
+    let b= "embed/"
+  
+    res = a.substr(0, 24) + b + a.substr(24);
+  }
+  
   return (
     <Box className="main">
       <Box className="head">
@@ -84,7 +93,7 @@ const Template4 = ({data}) => {
         <iframe
           width="750"
           height="480"
-          src={data.iframesrc}
+          src={res}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

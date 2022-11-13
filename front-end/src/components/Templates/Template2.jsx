@@ -5,7 +5,14 @@ import Styles from "./Template2.css";
 const Template2 = ({data}) => {
   // hashim you can send the props to this components from start page input elements
 
-  console.log(data)
+  let res;
+  if(data.iframesrc) {
+    let a = data.iframesrc;
+    let b= "embed/"
+  
+    res = a.substr(0, 24) + b + a.substr(24);
+  }
+
   
   return (
    data && data.image1src && <Box className="main">
@@ -86,7 +93,7 @@ const Template2 = ({data}) => {
         <iframe
           width="750"
           height="480"
-          src={`https://www.youtube.com/embed/w9Do2qAGDc0`}
+          src={res}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

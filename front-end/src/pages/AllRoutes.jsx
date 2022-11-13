@@ -36,7 +36,7 @@ function AllRoutes() {
       <Route path="/pricingdemo" element={<Pricing />} />
       <Route path="/blogdemo" element={<Blog />} />
       <Route path="/about" element={<About />} />
-      <Route path="/user" element={<User />} />
+      <Route path="/user" element={<PrivRoutes><User /></PrivRoutes>} />
       <Route path="/customersdemo" element={<Customers />} />
       <Route path="/start-page" element={<PrivRoutes><MainPage_Template /></PrivRoutes>} />
       {template_arr.map((i) => {
