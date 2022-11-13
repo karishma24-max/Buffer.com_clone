@@ -7,7 +7,9 @@ import axios from 'axios'
 const Sidebar = ({displaydata,userdisplay}) => {
   
   return (
-    <Box w="280px" border="1px solid grey" ml="10px"  mt="30px"><Box w="170px" pr="20px" pl="10px" pt="10px" ml="10px"  h="50px" mt="30px" fontWeight="bold"  borderRadius="5px" color='blue' bg="rgb(91, 141, 234)" size='md' ><Flex><AiTwotoneCalendar pr="5px" pt="3px"/><Spacer/> Calender</Flex></Box>
+    <Box w="250px" ml="10px" h="570px" borderRadius={"10px"} boxShadow={" rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"} 
+    mt="30px" ><Box w="170px" pr="20px" pl="10px" pt="10px" ml="10px"  
+     h="50px" mt="30px" fontWeight="bold" borderRadius={'5px'}  color='blue' bg="rgb(91, 141, 234)" size='md' ><Flex><AiTwotoneCalendar pr="5px" pt="3px" bg="white"/><Spacer/> Calender</Flex></Box>
   
  
 
