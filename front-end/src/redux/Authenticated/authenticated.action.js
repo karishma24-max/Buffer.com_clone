@@ -4,7 +4,11 @@ import {  SIGNIN_ERROR, SIGNIN_LOADING, SIGNIN_SUCCESS, SIGNOUT_SUCCESS } from "
 export const login = (creds) => async (dispatch) => {
     dispatch({type : SIGNIN_LOADING})
     try {
+<<<<<<< HEAD
         let res = await axios.post(`${process.env.REACT_APP_URL}/user/signin`, creds)
+=======
+        let res = await axios.post(process.env.REACT_APP_USER_SIGIN_URL , creds)
+>>>>>>> a555e7b2e1c1aad1961aca43ac3f4763b69b3371
         let data = await res.data
 
         dispatch({type : SIGNIN_SUCCESS , payload : data})

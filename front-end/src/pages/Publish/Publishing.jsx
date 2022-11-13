@@ -3,7 +3,11 @@
 import { Flex } from '@chakra-ui/react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+<<<<<<< HEAD
+import Navbar from '../../components/Navbar';
+=======
 import UserNavbar from '../../components/UserNavbar';
+>>>>>>> cf20a08ee16dee6f3cf26c43736aeabb46875b3c
 import Calender from './Component/Calender';
 // import 'react-calendar/dist/Calendar.css' 
 import "./Component/Calender.css"
@@ -15,6 +19,13 @@ const Publishing = () => {
     let response = await axios.get(`${process.env.REACT_APP_URL}/post`)
     return response
 
+<<<<<<< HEAD
+  const getdata=async ()=>{
+    let response=await axios.get("https://bluelock.cyclic.app/post")
+  return response
+   
+=======
+>>>>>>> cf20a08ee16dee6f3cf26c43736aeabb46875b3c
   }
   const [displaydata, setdisplaydata] = useState(0)
   const [userdisplay, setUserdisplay] = useState("")
@@ -31,6 +42,15 @@ const Publishing = () => {
   }, [displaydata, userdisplay])
 
   return (
+<<<<<<< HEAD
+    <> <Navbar/>
+    <Flex h="140%">
+   
+    <Sidebar displaydata={displaydata} userdisplay={userdisplay} />
+    <Calender startingDate={new Date()} setdata={setdata} arrdata={arrdata}   />
+   </Flex>
+   </>
+=======
     <>
       <UserNavbar />
       <Flex w="100%">
@@ -38,6 +58,7 @@ const Publishing = () => {
         <Calender startingDate={new Date()} setdata={setdata} arrdata={arrdata} />
       </Flex>
     </>
+>>>>>>> cf20a08ee16dee6f3cf26c43736aeabb46875b3c
   )
 }
 

@@ -12,6 +12,8 @@ import {
   MenuList,
   MenuItem,
   Text,
+  Toast,
+  useToast,
 } from "@chakra-ui/react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AiOutlineTeam } from "react-icons/ai";
@@ -21,8 +23,25 @@ import { logout } from "../redux/Authenticated/authenticated.action";
 function UserNavbar() {
   let data = JSON.parse(localStorage.getItem("user"))
   const dispatch = useDispatch()
+  const toast = useToast()
+
+  const handelLogout = () => {
+    
+    toast({
+      title: 'Logout Succesfully',
+      position : "top",
+      status: 'error',
+      duration: 2000,
+      isClosable: true,
+    })
+      dispatch(logout())
+
+  }
+  
+  
+
   return (
-    <Box backgroundColor={"#FFFFFF"} m="10px 0" fontFamily={"sans-serif"}>
+    <Box backgroundColor={"#FFFFFF"} fontFamily={"sans-serif"}>
       <Flex h="70px" w="95%" m="auto">
         <Box display={"Flex"}>
          {/*  //add the navigation to publishing Link */}
@@ -201,20 +220,20 @@ function UserNavbar() {
               </Box>
             </MenuButton>
             <MenuList>
-              <NavLink to="/user"><MenuItem>Account</MenuItem></NavLink>
+              <Link to="/userdetails"><MenuItem>Account</MenuItem></Link>
               <MenuItem>My preferences</MenuItem>
               <MenuItem>Channels</MenuItem>
-     <MenuItem>
+              <MenuItem>Team</MenuItem>
+              <MenuItem>
                 <Button
                   background={"none"}
                   _hover={"none"}
                   color="red"
-                  onClick={()=>dispatch(logout())}  // pass the dispatch function to remove the user data in redux as well as Localstorage
+                  onClick={handelLogout}  // pass the dispatch function to remove the user data in redux as well as Localstorage
                 >
                   Logout
                 </Button>
               </MenuItem>
-
             </MenuList>
           </Menu>
         </HStack>

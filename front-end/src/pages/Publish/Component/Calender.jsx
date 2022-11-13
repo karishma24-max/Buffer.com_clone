@@ -6,6 +6,7 @@ import { background, Box, Button, Flex, Heading, Img, Input, Modal, ModalBody, M
 import { AiFillFileImage } from 'react-icons/ai'
 import axios from 'axios'
 import Schedule from './Schedule'
+import Navbar from '../../../components/Navbar'
 
 // import Days from 'react-calendar/src/MonthView/Days'
 const weekday = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -51,7 +52,7 @@ const Calender = ({startingDate,displaydata,userdisplay,setdata,arrdata}) => {
 
   
 
-
+console.log(arrdata)
     const [date,setDate]=useState(new Date())
    
    const [currentMonth,setcurrentMonth]=useState(startingDate.getMonth())
@@ -90,7 +91,7 @@ const { isOpen, onOpen, onClose } = useDisclosure()
   const current1= x.getMonth()
   const current2= x.getFullYear()
   console.log(current)
-  const [userdata,setUserdata]=useState({img:"",text:"",date:""})
+  const [userdata,setUserdata]=useState({image:"https://media.istockphoto.com/id/862201574/photo/there-is-so-much-fun-to-have-with-social-networking.jpg?b=1&s=170667a&w=0&k=20&c=8KLAHSB5uVzd3Z5PubqK_DOKJEPBtlx8S9tQhVr1w_U=",text:"",date:""})
   
   const handledata=(e)=>{
     const {value, name} = e.target
@@ -100,17 +101,18 @@ const { isOpen, onOpen, onClose } = useDisclosure()
 
 const handlesubmit=()=>
 {
-let response=axios.post(`process.env.REACT_APP_URL${userdata}`)
-console.log(response.data)
+let response=axios.post(`https://bluelock.cyclic.app/post`,userdata).then(res=>console.log(res.data)).catch(e=>console.log(e.message))
+// console.log(response.data)
 setdata()
 }
   return (
-    <div><Flex mt="30px">
+<>
+    <div className="calendersection"><Flex mt="30px">
     <img src="C:\fakepath\WhatsApp Image 2022-10-10 at 8.57.28 PM.jpeg" alt=""/>
-  <Flex>  <Button ml="50px" onClick={prevmonth}><ArrowBackIcon/></Button><Heading size='md'>Today</Heading><Button onClick={nextmonth}><ArrowForwardIcon/>
+  <Flex>  <Button ml="50px" color="grey" border="1px solid" size="sm"  onClick={prevmonth} bg="white"><ArrowBackIcon size="0px"/></Button><Heading size='md' color="grey" ml="2px">Today</Heading><Button onClick={nextmonth} bg="white" size="sm" color="grey" border="1px solid"  ><ArrowForwardIcon size="50px" fontWeight={"bold"}/>
     </Button> <Heading  size='md' ml="10px">{date.toLocaleString('en-US',{month:"long"})}{currentYear}</Heading></Flex>
     <Spacer />
-     <Box><Button ml={4}>All posts</Button><Button ml={4}>All Channels</Button><Button ml={4} c={"blue"} bg={"cornflowerblue"}>Month</Button><Button ml={4} bg={"blue"}>Create Posts</Button></Box></Flex>
+     <Box><Button ml={4} bg="white" border="1px solid grey">All posts</Button><Button ml={4} bg="white" border="1px solid grey">All Channels</Button><Button ml={4} c={"blue"} bg={"cornflowerblue"}>Month</Button><Button ml={3} mr="10px" bg={"blue"}>Create Posts</Button></Box></Flex>
 
 
     <div className="calender-box">
@@ -126,7 +128,7 @@ style={{
         }}
 
 
- onClick={onOpen}    ><Box w="50px" h="50px" >{day}{arrdata.map((ele)=><div >{ele.date == day? <Schedule text={ele.text} img={ele.img} id={ele.id} date={ele.date} month={current1+1} year={current2}/>:""}</div>)}
+ onClick={onOpen}    ><Box w="50px" h="50px" >{day}{arrdata.map((ele)=><div >{ele.date == day? <Schedule text={ele.text} img={ele.image} id={ele.id} date={ele.date} month={current1+1} year={current2}/>:""}</div>)}
   </Box> 
     
   </div></Tooltip>)}</div> 
@@ -142,7 +144,7 @@ style={{
                         <Box border="2px solid lightgrey" mt={10} ml={10} mr={10} mb={10} height="440px">
                            
 
-              <Flex ><Heading size="30px" mt="20px" ml="10px">Enter your Image</Heading> <Input color="grey" border="2px dotted" w="250px" ml="30px" mt="20px" type="text" name="img" onChange={handledata}  /></Flex> 
+              <Flex ><Heading size="30px" mt="20px" ml="10px">Enter your Image</Heading> <Input color="grey" border="2px dotted" w="250px" ml="30px" mt="20px" type="text" name="image" onChange={handledata}  /></Flex> 
               <Flex><Heading size="30px" mt="20px" ml="10px">Enter your Date</Heading> <Input onChange={handledata} w="250px" name="date" ml="50px" mt="20px"/></Flex>
                      <Flex><Heading size="30px" mt="60px" ml="10px">Enter Your Text:- </Heading><Input color="" placeholder="What would you like to share"  w="250px" ml="45px" mt="20px"  h="220px" name="text" onChange={handledata} /></Flex>          
                      <Button ml="140px" bg="cornflowerblue" mt="20px" onClick={handlesubmit}>Submit</Button>      
@@ -155,6 +157,7 @@ style={{
             </Box>
 
         </div>
+        </>
     )
 
 }
