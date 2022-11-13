@@ -3,6 +3,7 @@
 import { Flex } from '@chakra-ui/react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Navbar from '../../components/Navbar';
 import Calender from './Component/Calender';
 // import 'react-calendar/dist/Calendar.css' 
 import "./Component/Calender.css"
@@ -11,7 +12,7 @@ const Publishing = () => {
   const [arrdata,setArrdata]=useState([])
 
   const getdata=async ()=>{
-    let response=await axios.get("http://localhost:8000/data")
+    let response=await axios.get("https://bluelock.cyclic.app/post")
   return response
    
   }
@@ -31,10 +32,13 @@ const setdata=()=>{
         },[displaydata,userdisplay])
 
   return (
-    <Flex w="100%">
+    <> <Navbar/>
+    <Flex h="140%">
+   
     <Sidebar displaydata={displaydata} userdisplay={userdisplay} />
     <Calender startingDate={new Date()} setdata={setdata} arrdata={arrdata}   />
    </Flex>
+   </>
   )
 }
 
