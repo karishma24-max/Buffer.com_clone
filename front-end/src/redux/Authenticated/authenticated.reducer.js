@@ -59,6 +59,7 @@ export const Authreducer = (state = initalState , {type , payload}) => {
                     isAuth : false,
                     user : ""
                 },
+                error : false
             }
         }
 
