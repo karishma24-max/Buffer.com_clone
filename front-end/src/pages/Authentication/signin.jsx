@@ -3,6 +3,7 @@ import "./signin.css"
 import { Navigate, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import { login } from "../../redux/Authenticated/authenticated.action";
+import Home from "../Home"
 
 import { useToast } from '@chakra-ui/react'
 
@@ -66,7 +67,7 @@ const Signin = () => {
         <div id="Container">
             <div id="div1">
                 <div id="bufferimgdiv">
-                    <img id="bufferimg" src="https://i.ibb.co/6JkQKCN/Bluelock.png" alt="" />
+                   <a href={"/"}><img id="bufferimg" src="https://i.ibb.co/6JkQKCN/Bluelock.png" alt="" /></a>
                 </div>
 
                 <div id="formdiv">
