@@ -104,11 +104,11 @@ const Signup = () =>{
             .then((response) => {
                 console.log(response.data);
                 console.log(`New user Created on ${response.data.user.createdAt}..user id:${response.data.user._id}`)
-                setStateO("Sign Up")
+                setStateO("Sign Up") 
                 toast({
                     title: 'Account Created Successfully',
                     description:"Welcome To Bluelock family",
-                    position : 'top',
+                    position :'top',
                     status: 'success',
                     duration: 2000,
                     isClosable: true,
