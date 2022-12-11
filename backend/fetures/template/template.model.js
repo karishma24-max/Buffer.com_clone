@@ -28,7 +28,6 @@ const TemplateSchema = new mongoose.Schema(
     timestamps: true,
     versionKey: false,
   }
-);
-
+)
 const Template = mongoose.model("template", TemplateSchema);
 module.exports = Template;
