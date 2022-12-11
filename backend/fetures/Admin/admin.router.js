@@ -1,25 +1,24 @@
 const express = require("express");
 const server = express();
-const User = require("./user.model");
+const Admin = require("./admin.model.js");
 
-server.get("/:admin", async (req, res) => {
-  const { admin } = req.params;
-  if (admin == "admin") {
-    let user = await User.find();
+server.get("/", async (req, res) => {
+  try{
+    let user = await Admin.find();
     res.send(user);
-  } else {
-    res.status(401).send("authrntication failed");
+  } catch(e) {
+    res.status(401).send(e.message);
   }
 });
 
 server.post("/signup", async (req, res) => {
   let { name, email, password } = req.body;
   try {
-    let existinguser = await User.findOne({ email });
+    let existinguser = await Admin.findOne({ email });
     if (existinguser) {
       res.status(404).send('we can"t able to create email alreay in use');
     } else {
-      let user = await User.create({
+      let user = await Admin.create({
         name,
         email,
         password,
@@ -35,7 +34,7 @@ server.post("/signup", async (req, res) => {
 server.post("/signin", async (req, res) => {
   let { email, password } = req.body;
   try {
-    let user = await User.findOne({ email });
+    let user = await Admin.findOne({ email });
     if (user && user.email === email) {
       if (user.password === password) {
         res.send({
@@ -56,7 +55,7 @@ server.post("/signin", async (req, res) => {
 server.get("/singleuser/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const user = await User.findById(id);
+    const user = await Admin.findById(id);
     res.send(user);
   } catch (e) {
     res.status(404).send("Id not found");
@@ -68,7 +67,7 @@ server.patch("/", async (req, res) => {
     const {_id} = req.body
     const updates = req.body;
 
-    const result = await User.findByIdAndUpdate(_id,updates,{new:true});
+    const result = await Admin.findByIdAndUpdate(_id,updates,{new:true});
     res.send(result)
   } catch (e) {
     res.status(404).send(e.message);
@@ -78,9 +77,9 @@ server.patch("/", async (req, res) => {
 server.delete("/", async (req, res) => {
   let { _id } = req.body;
 
-  const user = await User.findById(_id);
+  const user = await Admin.findById(_id);
   if (user) {
-    let Delete = await User.deleteOne({ _id });
+    let Delete = await Admin.deleteOne({ _id });
     res.status(200).send(`user ${user.name} is deleted successfully`);
   } else {
     res.status(401).send("Id Not found");

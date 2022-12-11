@@ -4,12 +4,9 @@ const calenderSchema = new mongoose.Schema(
   {
     image: {
       type: String,
-      required: true,
     },
     text: {
       type: String,
-      required: true,
-      unique: true,
     },
     date: {
       type: String,

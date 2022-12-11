@@ -8,9 +8,11 @@ server.use(cors());
 const userRouter = require("./fetures/users/user.router")
 const templateRouter = require("./fetures/template/template.router.js");
 const postRouter = require("./fetures/Calender/calender.router.js");
+const adminRouter = require("./fetures/Admin/admin.router");
 server.use("/user",userRouter);
 server.use("/post",postRouter);
 server.use("/template",templateRouter);
+server.use("/admin",adminRouter);
 
 server.get("/",(req,res)=>{
     res.send("Hello world!")
