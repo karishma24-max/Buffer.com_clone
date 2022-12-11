@@ -5,9 +5,24 @@ import { useParams } from "react-router-dom";
 import Template3 from "./Template3";
 import Template4 from "./Template4"
 import Template2 from "./Template2";
+import YouTube from "../EditingComponents/YouTube";
 
 
-const Template1 = ({data}) => {
+const Template1 = ({ data }) => {
+ 
+  let res;
+  if(data.iframesrc) {
+    let a = data.iframesrc;
+    let b= "embed/"
+  
+    res = a.substr(0, 24) + b + a.substr(24);
+  }
+
+ 
+
+
+  
+
 
   return (
     <Box className="main">
@@ -29,13 +44,15 @@ const Template1 = ({data}) => {
       </Box>
       {/* padding="35px 170px 35px 170px" */}
       <Box>
-        <Button
-          colorScheme={'yellow'}
-          width={'380px'}
-          padding={"35px 50px"}
-        >
-          {data.button1content}
-        </Button>
+        <a target={"_blank"} href={data.button1link}>
+          <Button
+            colorScheme={'yellow'}
+            width={'380px'}
+            padding={"35px 50px"}
+          >
+            {data.button1content}
+          </Button>
+        </a>
       </Box>
       <Box className="description1">
         <Text>
@@ -55,15 +72,7 @@ const Template1 = ({data}) => {
         </Text>
       </Box>
       <div className="video-responsive">
-        <iframe
-          width={'750'}
-          height={'480'}
-          src={data.iframesrc}
-          frameBorder={0}
-          allow={'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'}
-          allowFullScreen
-          title={'Embedded youtube'}
-        />
+        <iframe width="560" height="315" src={res} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </Box>
   )

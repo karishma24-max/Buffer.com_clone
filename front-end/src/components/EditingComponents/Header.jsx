@@ -38,6 +38,7 @@ const Header = ({ id , name , initText }) => {
           width="380px"
           marginTop="10px"
           justifyContent="left"
+          border="1px solid #bfc5c6"
           p={7}
         >
           <Image
@@ -54,7 +55,7 @@ const Header = ({ id , name , initText }) => {
         <Box
           //   p="40px"
           //   color="white"
-          bg="#f5f5f5"
+          bg="white"
           mt="4"
           rounded="md"
           shadow="md"
@@ -62,6 +63,8 @@ const Header = ({ id , name , initText }) => {
           flexDirection="column"
           gap="2rem"
           width="400px"
+          border="1px solid #878787"
+          
         >
           <Box
             height="100px"
@@ -70,6 +73,7 @@ const Header = ({ id , name , initText }) => {
             justifyContent={"center"}
             gap="1rem"
             bg="white"
+            marginLeft='20px'
           >
             <label>Logo or personal photo</label>
             <Input type="file" />
@@ -81,6 +85,7 @@ const Header = ({ id , name , initText }) => {
             justifyContent={"center"}
             gap="1rem"
             bg="white"
+            marginLeft='20px'
           >
             <label>Your business or personal name</label>
             <Input onChange={handelInput} name={name.headingContent} type="text" />
@@ -92,6 +97,7 @@ const Header = ({ id , name , initText }) => {
             justifyContent={"center"}
             gap="1rem"
             bg="white"
+            marginLeft='20px'
           >
             <label>A few words about you or your business</label>
             <Input onChange={handelInput} name={name.textcontent} type="text" />

@@ -1,16 +1,16 @@
-import { Button, Image, Collapse, Box, useDisclosure, Input } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { useEffect } from "react";
+import { Button, Image,Collapse, Box, useDisclosure, Input } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getTemplate, updateTemplate } from "../../redux/Template/template.action";
 
-const ButtonComp = ({id , name, inittext}) => {
+const Text1 = ({id , name , inittext}) => {
+  const { isOpen, onToggle } = useDisclosure();
   const [text , setText] = useState(inittext)
   const dispatch = useDispatch()
 
   const handelInput = (e) => {
     const {name , value} = e.target
-    setText({[name] : value})
+    setText(value)
     updateTemplate(id , name , value)
   }
 
@@ -20,24 +20,22 @@ const ButtonComp = ({id , name, inittext}) => {
 
 
 
-  
 
-  const { isOpen, onToggle } = useDisclosure();
   return (
     <Box width="400px" margin="auto" marginTop="10px">
-      <Button onClick={onToggle} bg="white" width="380px" justifyContent='left' p={7}>
+      <Button onClick={onToggle} bg="white" width="380px" justifyContent='left' p={7} border="1px solid #bfc5c6"> 
       <Image
             boxSize="32px"
             objectFit="cover"
-            src="https://user-images.githubusercontent.com/101625055/201312048-50024f58-a8ae-44bb-b069-39462b51792b.jpg"
+            src="https://user-images.githubusercontent.com/101625055/201312083-fbffd575-3bae-45b0-9c0a-db69ff71518c.png"
             alt="Dan Abramov"
             bg='black'
           />
-        Button name
+        Text Edit
       </Button>
       <Collapse in={isOpen} animateOpacity>
         <Box
-          bg="#f5f5f5"
+          bg="white"
           mt="4"
           rounded="md"
           shadow="md"
@@ -45,6 +43,7 @@ const ButtonComp = ({id , name, inittext}) => {
           flexDirection="column"
           gap="2rem"
           width="400px"
+          border="1px solid #878787"
         >
           <Box
             height="auto"
@@ -52,11 +51,10 @@ const ButtonComp = ({id , name, inittext}) => {
             flexDirection="column"
             gap="1rem"
             bg="white"
+            marginLeft='20px'
           >
-            <label>Label</label>
-            <Input name={name.buttonContent}  placeholder="Button name" onChange={handelInput} />
-            <label>Link</label>
-            <Input name={name.buttonLink} placeholder="A link to anything →" />
+            <label>Text</label>
+            <Input name={name}  onChange={handelInput} placeholder="Enter description" />
           </Box>
         </Box>
       </Collapse>
@@ -64,4 +62,4 @@ const ButtonComp = ({id , name, inittext}) => {
   );
 };
 
-export default ButtonComp;
+export default Text1;

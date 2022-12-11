@@ -34,6 +34,7 @@ const YouTube = ({id , name , inittext}) => {
         width="380px"
         marginBottom="10px"
         justifyContent="left"
+        border="1px solid #bfc5c6"
         p={7}
       >
         <Image
@@ -47,7 +48,7 @@ const YouTube = ({id , name , inittext}) => {
       </Button>
       <Collapse in={isOpen} animateOpacity>
         <Box
-          bg="#f5f5f5"
+          bg="white"
           mt="4"
           rounded="md"
           shadow="md"
@@ -55,6 +56,7 @@ const YouTube = ({id , name , inittext}) => {
           flexDirection="column"
           gap="2rem"
           width="400px"
+          border="1px solid #878787"
         >
           <Box
             height="auto"
@@ -62,6 +64,7 @@ const YouTube = ({id , name , inittext}) => {
             flexDirection="column"
             gap="1rem"
             bg="white"
+            marginLeft='20px'
           >
             <label>YouTube Video URL</label>
             <Input name={name}  onChange={handelInput} placeholder="Enter YouTube Video URL" />

@@ -1,9 +1,18 @@
 import { Box, Button, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
-import Styles from "./Template3.css";
+import Styles from "./Template4.css";
 // hashim you can send the props to this components from start page input elements
-const Template3 = ({data}) => {
+const Template4 = ({data}) => {
   // hashim you can send the props to this components from start page input elements
+
+  let res;
+  if(data.iframesrc) {
+    let a = data.iframesrc;
+    let b= "embed/"
+  
+    res = a.substr(0, 24) + b + a.substr(24);
+  }
+  
   return (
     <Box className="main">
       <Box className="head">
@@ -25,17 +34,30 @@ const Template3 = ({data}) => {
       </Box>
       {/* padding="35px 170px 35px 170px" */}
       <Box>
+      <a target={"_blank"} href={data.button1link}>
         <Button
-          colorScheme="orange"
+          colorScheme="purple"
           width="380px"
           padding="35px 50px 35px 50px"
         >
           {data.button1content}
         </Button>
+        </a>
+      </Box>
+      <Box>
+      <a target={"_blank"} href={data.button2link}>
+        <Button
+          colorScheme="purple"
+          width="380px"
+          padding="35px 50px 35px 50px"
+        >
+          {data.button2content}
+        </Button>
+        </a>
       </Box>
       <Box className="description1">
         <Text>
-          {data.descriptioncontent}
+          {data.description2content}
         </Text>
       </Box>
       <Box width="380px" margin="auto">
@@ -46,50 +68,32 @@ const Template3 = ({data}) => {
         />
       </Box>
       <Box>
+      <a target={"_blank"} href={data.button3link}>
         <Button
-          colorScheme="orange"
+          colorScheme="purple"
           width="380px"
           padding="35px 50px 35px 50px"
         >
-          {data.button2content}
+          {data.button3content}
         </Button>
+        </a>
       </Box>
-      <Box
-        width="380px"
-        margin="auto"
-        backgroundColor="#f5f5f5"
-        borderRadius="10px"
-      >
-        <Image
-          src={data.image3src}
-          alt="mid"
-          borderRadius="10px"
-        />
-        <Text>{data.text3content}</Text>
-      </Box>
-      <Box className="description1">
-        <Text>
-          {data.description2content}
-        </Text>
-      </Box>
-      <Box
-        width="380px"
-        margin="auto"
-        backgroundColor="#f5f5f5"
-        borderRadius="10px"
-      >
-        <Image
-          src={data.image4src}
-          alt="mid"
-          borderRadius="10px"
-        />
-        <Text>{data.text4content}</Text>
+      <Box>
+      <a target={"_blank"} href={data.button4link}>
+        <Button
+          colorScheme="purple"
+          width="380px"
+          padding="35px 50px 35px 50px"
+        >
+          {data.button4content}
+        </Button>
+        </a>
       </Box>
       <div className="video-responsive">
         <iframe
           width="750"
           height="480"
-          src={data.iframesrc}
+          src={res}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -100,4 +104,4 @@ const Template3 = ({data}) => {
   );
 };
 
-export default Template3;
+export default Template4;

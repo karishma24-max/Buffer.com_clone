@@ -12,20 +12,40 @@ import {
   MenuList,
   MenuItem,
   Text,
+  Toast,
+  useToast,
 } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AiOutlineTeam } from "react-icons/ai";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/Authenticated/authenticated.action";
 function UserNavbar() {
-  let user = JSON.parse(localStorage.getItem("user")) || {
-  email: "BlueLock",name:"BlueLock",password:"BlueLock"
-  };
+  let data = JSON.parse(localStorage.getItem("user"))
+  const dispatch = useDispatch()
+  const toast = useToast()
+
+  const handelLogout = () => {
+    
+    toast({
+      title: 'Logout Succesfully',
+      position : "top",
+      status: 'error',
+      duration: 2000,
+      isClosable: true,
+    })
+      dispatch(logout())
+
+  }
+  
+  
+
   return (
-    <Box backgroundColor={"#FFFFFF"} m="10px 0" fontFamily={"sans-serif"}>
+    <Box backgroundColor={"#FFFFFF"} fontFamily={"sans-serif"}>
       <Flex h="70px" w="95%" m="auto">
         <Box display={"Flex"}>
          {/*  //add the navigation to publishing Link */}
-          <NavLink to="">
+          <NavLink to="/publish">
             <Button
               background={"none"}
               color="grey"
@@ -44,7 +64,7 @@ function UserNavbar() {
             </Button>
           </NavLink>
           {/*  //add the navigation link to publishing */}
-          <NavLink to="">
+          <NavLink to="/publish">
             <Button
               _hover={{ color: "blue" }}
               background={"none"}
@@ -89,7 +109,7 @@ function UserNavbar() {
             </Button>
           </NavLink>
           {/*  //add the navigation link to start page */}
-          <NavLink to=""> 
+          <NavLink to="/start-page"> 
             <Button
               _hover={{ color: "blue" }}
               background={"none"}
@@ -195,7 +215,7 @@ function UserNavbar() {
               rightIcon={<ChevronDownIcon />}
             >
               <Box display={"Flex"} alignItems="center">
-                <Text> {user.email}</Text>{" "}
+                <Text>{data.email}</Text>{" "}
                 <Image src="https://i.ibb.co/VL94j8H/user.png" alt="user" />
               </Box>
             </MenuButton>
@@ -204,6 +224,16 @@ function UserNavbar() {
               <MenuItem>My preferences</MenuItem>
               <MenuItem>Channels</MenuItem>
               <MenuItem>Team</MenuItem>
+              <MenuItem>
+                <Button
+                  background={"none"}
+                  _hover={"none"}
+                  color="red"
+                  onClick={handelLogout}  // pass the dispatch function to remove the user data in redux as well as Localstorage
+                >
+                  Logout
+                </Button>
+              </MenuItem>
             </MenuList>
           </Menu>
         </HStack>
